@@ -1,26 +1,24 @@
 import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 import { AuthProvider } from '../../../Contexts/Authprovider/AuthContext';
 
 const SignUp = () => {
-    const { signUp, updateUser } = useContext(AuthProvider);
+    const { signUp, updateUser, googleLogin } = useContext(AuthProvider);
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const navigate = useNavigate();
 
     // Create user on firebase with email and password
     const handleSignUp = data => {
         signUp(data.email, data.password)
             .then(res => {
-                console.log(res.user);
-                toast.success('User Created Successfully')
-                const userInfo = {
-                    displayName: data.name
-                }
+                const userInfo = { displayName: data.name }
                 // Update user info
-                updateUser(userInfo).then(() => { })
-                    // show error if update user failed
-                    .catch(err => console.log(err));
+                updateUser(userInfo).then(() => { }).catch(err => console.log(err));
+                // Add user to database if everything is ok
                 addUser(data.name, data.email, data.category)
+                toast.success('User Created Successfully');
             })
             // Show error if user creation failed
             .catch(error => {
@@ -32,6 +30,15 @@ const SignUp = () => {
     }
 
     // create user in firebase with google
+    const handleGoogleLogin = () => {
+        googleLogin()
+            .then(res => {
+                const user = res.user;
+                addUser(user.displayName, user.email, 'user');
+                toast.success('User Added')
+            })
+            .catch(error => console.log(error))
+    }
 
     // Add user to the database
     const addUser = (name, email, category) => {
@@ -39,15 +46,13 @@ const SignUp = () => {
         fetch('http://localhost:5000/users', {
             method: 'POST',
             headers: {
-                "content-type": "application/json"
+                "content-type": "application/json",
             },
             body: JSON.stringify(user)
         })
             .then(res => res.json())
             .then(data => {
-                if (data.acknowledged) {
-                    toast.success('User Added')
-                }
+                navigate('/')
             })
     }
 
@@ -103,7 +108,9 @@ const SignUp = () => {
                 <input className='btn mt-5' type="submit" />
                 <div className="divider">OR</div>
                 {/* Google Provider */}
-                <button className='btn btn-outline w-full'>CONTINUE WITH GOOGLE</button>
+                <button
+                    onClick={handleGoogleLogin}
+                    className='btn btn-outline w-full'>CONTINUE WITH GOOGLE</button>
             </form>
             {/* Form End */}
         </div>

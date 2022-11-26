@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthProvider } from '../../../Contexts/Authprovider/AuthContext';
 
 const Navbar = () => {
+    const { user, signout } = useContext(AuthProvider);
     const menuItems = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/'>Categories</Link></li>
@@ -26,9 +28,18 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <button className='btn'>
-                    <Link to='/signin'>SignIn</Link>
-                </button>
+                {
+                    user ?
+                        // if user available then show SignOut button
+                        <>
+                            <button className='btn'>SignOut</button>
+                        </> :
+                        // if user is not available then show SignIn button
+                        <>
+                            <button className='btn'><Link to='/signin'>SignIn</Link></button>
+                        </>
+                }
+
             </div>
         </div>
 
