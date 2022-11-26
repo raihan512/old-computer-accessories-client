@@ -27,7 +27,7 @@ const Navbar = () => {
         </>
         <>
             {
-                userCategory.category === 'seller' && <><li><Link to='/'>Add Product</Link></li>  <li><Link to='/'>My Product</Link></li></>
+                userCategory.category === 'seller' && <><li><Link to='/addproducts'>Add Product</Link></li>  <li><Link to='/myproducts'>My Product</Link></li></>
             }
         </>
 
