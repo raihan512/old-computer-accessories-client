@@ -1,17 +1,44 @@
+import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthProvider } from '../../../Contexts/Authprovider/AuthContext';
 
 const Navbar = () => {
     const { user, signout } = useContext(AuthProvider);
+    const navigate = useNavigate();
+
+    const email = user?.email;
+    const { data: userCategory = [] } = useQuery({
+        queryKey: ['userCategory', email],
+        queryFn: async () => {
+            const res = await fetch(`http://localhost:5000/users?email=${user?.email}`);
+            const data = await res.json()
+            return data;
+        }
+    })
+
     const menuItems = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/'>Categories</Link></li>
+        <>
+            {
+                user && <li><Link to='/'>Dashboard</Link></li>
+            }
+        </>
+        <>
+            {
+                userCategory.category === 'seller' && <><li><Link to='/'>Add Product</Link></li>  <li><Link to='/'>My Product</Link></li></>
+            }
+        </>
+
     </>
 
     const handleLogut = () => {
         signout()
-            .then(res => console.log(res))
+            .then(res => {
+                navigate('/signin')
+
+            })
             .catch(error => console.error(error))
     }
 
