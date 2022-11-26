@@ -9,6 +9,12 @@ const Navbar = () => {
         <li><Link to='/'>Categories</Link></li>
     </>
 
+    const handleLogut = () => {
+        signout()
+            .then(res => console.log(res))
+            .catch(error => console.error(error))
+    }
+
     return (
         <div className="navbar bg-base-100 sticky top-0 w-100 z-10 shadow-lg">
             <div className="navbar-start">
@@ -32,7 +38,7 @@ const Navbar = () => {
                     user ?
                         // if user available then show SignOut button
                         <>
-                            <button className='btn'>SignOut</button>
+                            <button className='btn' onClick={handleLogut}>SignOut</button>
                         </> :
                         // if user is not available then show SignIn button
                         <>
