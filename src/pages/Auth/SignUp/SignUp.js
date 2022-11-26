@@ -1,20 +1,61 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
+import toast from 'react-hot-toast';
 import { AuthProvider } from '../../../Contexts/Authprovider/AuthContext';
 
 const SignUp = () => {
-    const { signUp } = useContext(AuthProvider);
+    const { signUp, updateUser } = useContext(AuthProvider);
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const [data, setData] = useState("");
 
+    // Create user on firebase with email and password
     const handleSignUp = data => {
-        console.log(data);
+        signUp(data.email, data.password)
+            .then(res => {
+                console.log(res.user);
+                toast.success('User Created Successfully')
+                const userInfo = {
+                    displayName: data.name
+                }
+                // Update user info
+                updateUser(userInfo).then(() => { })
+                    // show error if update user failed
+                    .catch(err => console.log(err));
+                addUser(data.name, data.email, data.category)
+            })
+            // Show error if user creation failed
+            .catch(error => {
+                if (error.message.includes('already-in-use')) {
+                    toast.error('User Already Exist')
+                }
+            })
+
     }
 
-    console.log(data);
+    // create user in firebase with google
+
+    // Add user to the database
+    const addUser = (name, email, category) => {
+        const user = { name, email, category }
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    toast.success('User Added')
+                }
+            })
+    }
+
     return (
-        <div className='max-w-[450px] bg-base-200 shadow-lg mx-auto my-20 p-10 border rounded-md'>
+        <div className='max-w-[500px] bg-base-200 shadow-lg mx-auto my-20 p-10 border rounded-md'>
+            {/* Title */}
             <h2 className='text-4xl font-bold uppercase text-center'>SignUp</h2>
+            {/* Form Start */}
             <form
                 onSubmit={handleSubmit(handleSignUp)}>
                 {/* Input Field */}
@@ -58,8 +99,13 @@ const SignUp = () => {
                         {errors.password && <span>{errors.password?.message}</span>}
                     </label>
                 </div>
+                {/* Submit Button */}
                 <input className='btn mt-5' type="submit" />
+                <div className="divider">OR</div>
+                {/* Google Provider */}
+                <button className='btn btn-outline w-full'>CONTINUE WITH GOOGLE</button>
             </form>
+            {/* Form End */}
         </div>
     );
 };
