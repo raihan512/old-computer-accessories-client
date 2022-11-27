@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { AuthProvider } from '../../../Contexts/Authprovider/AuthContext';
 import MySingleProduct from './MySingleProduct/MySingleProduct';
 
@@ -24,6 +25,27 @@ const MyProducts = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged) {
+                    toast.success('Product Deleted')
+                    refetch();
+                }
+            })
+            .catch(error => console.error(error))
+    }
+
+    const handleAdvertiseProduct = id => {
+        console.log(id);
+        fetch(`http://localhost:5000/products/${id}`, {
+            method: "PATCH",
+            headers: {
+                'content-type': 'application/json'
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data);
+                console.log(data);
+                if (data.modifiedCount > 0) {
+                    toast.success('Product Advertised')
                     refetch();
                 }
             })
@@ -38,6 +60,7 @@ const MyProducts = () => {
                         key={product._id}
                         product={product}
                         handleDeleteProduct={handleDeleteProduct}
+                        handleAdvertiseProduct={handleAdvertiseProduct}
                     ></MySingleProduct>)
                 }
             </div>
