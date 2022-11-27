@@ -8,25 +8,41 @@ const AddProducts = () => {
     const navigate = useNavigate();
     const productCategories = useLoaderData();
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const imageHostKey = process.env.REACT_APP_imgbb_key;
+    console.log(imageHostKey);
 
     const handleAddProducts = data => {
-        // console.log(data);
-        fetch('http://localhost:5000/products', {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
+        const image = data.productImg[0]
+        const formData = new FormData();
+        formData.append('image', image);
+        const url = `https://api.imgbb.com/1/upload?key=${imageHostKey}`;
+        fetch(url, {
+            method: 'POST',
+            body: formData
         })
             .then(res => res.json())
-            .then(data => {
-                if (data.acknowledged) {
-                    toast.success('Product Added SuccessFully');
-                    navigate('/myproducts');
+            .then(imgData => {
+                if (imgData.success) {
+                    const imgUrl = imgData.data.url;
+                    data.productImg = imgUrl;
+                    console.log(data);
+                    fetch('http://localhost:5000/products', {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(data)
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.acknowledged) {
+                                toast.success('Product Added SuccessFully');
+                                navigate('/myproducts');
+                            }
+                        })
                 }
             })
     }
-
     return (
         <div className='mx-5'>
             <div className='max-w-[600px] border border-accent rounded-md my-20 mx-auto'>
@@ -53,7 +69,7 @@ const AddProducts = () => {
                             productCategories.map(productCategory => <option
                                 className='text-black'
                                 key={productCategory._id}
-                                value={productCategory.title}>
+                                value={productCategory._id}>
                                 {productCategory.title}</option>)
                         }
                     </select>
@@ -67,6 +83,9 @@ const AddProducts = () => {
                     {/* Add purchased year */}
                     <input type='number' {...register('purchasedYear', { required: true, minLength: 4 })} placeholder="Which year did you bought this?" className="input input-bordered input-accent w-full text-lg font-semibold mt-3" />
                     {errors.purchasedYear && <span className='text-red-500'>You must have to add purchased year like: 2015</span>}
+                    {/* Add Product Image */}
+                    <input type="file" {...register('productImg', { required: true })} className="file-input w-full border border-accent mt-3" />
+                    {errors.productImg && <span className='text-red-500'>You must have to add your product image</span>}
                     {/* Add Product description optional */}
                     <textarea  {...register('productDescription')}
                         placeholder="Describe about your products"
