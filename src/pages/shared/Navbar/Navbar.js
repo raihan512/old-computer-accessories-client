@@ -8,18 +8,18 @@ const Navbar = () => {
     const navigate = useNavigate();
 
     const email = user?.email;
-    const { data: userCategory = [] } = useQuery({
+    const { data: userCategory = [], isLoading } = useQuery({
         queryKey: ['userCategory', email],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/users?email=${user?.email}`);
-            const data = await res.json()
+            const res = await fetch(`http://localhost:5000/users?email=${email}`)
+            const data = await res.json();
             return data;
         }
     })
 
+
     const menuItems = <>
         <li><Link to='/'>Home</Link></li>
-        <li><Link to='/'>Categories</Link></li>
         <>
             {
                 user && <li><Link to='/'>Dashboard</Link></li>

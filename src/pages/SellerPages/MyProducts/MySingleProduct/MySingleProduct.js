@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MySingleProduct = ({ product }) => {
+const MySingleProduct = ({ product, handleDeleteProduct }) => {
     const { productImg, productname, resalePrice } = product;
 
     return (
@@ -13,7 +13,7 @@ const MySingleProduct = ({ product }) => {
                 </h2>
                 <p>Price: {resalePrice}TK</p>
                 <div className="card-actions">
-                    <div className="btn border-0 px-8 text-lg bg-error">Delete</div>
+                    <div className="btn border-0 px-8 text-lg bg-error" onClick={() => handleDeleteProduct(product._id)}>Delete</div>
                     <div className="btn border-0 px-8 text-lg bg-green-600">Advertise</div>
                 </div>
             </div>

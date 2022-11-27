@@ -34,7 +34,7 @@ const SignUp = () => {
         googleLogin()
             .then(res => {
                 const user = res.user;
-                addUser(user.displayName, user.email, 'user');
+                addUser(user.displayName, user.email, 'buyer');
                 toast.success('User Added')
             })
             .catch(error => console.log(error))
@@ -82,11 +82,11 @@ const SignUp = () => {
                 {/* Input Field */}
                 <div className="form-control w-full">
                     <label className="label">
-                        <span className="label-text text-xl font-semibold uppercase">You are User/Seller?</span>
+                        <span className="label-text text-xl font-semibold uppercase">You are Buyer/Seller?</span>
                     </label>
                     <select {...register("category", { required: true })}
                         className="select select-bordered text-lg">
-                        <option value='user'>User</option>
+                        <option value='buyer'>Buyer</option>
                         <option value='seller'>Seller</option>
                     </select>
                 </div>
