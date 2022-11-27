@@ -31,6 +31,7 @@ const AddProducts = () => {
                     data.productImg = imgUrl;
                     data.postedTime = currentTime;
                     data.sellerName = user.displayName;
+                    data.sellerEmail = user.email;
                     fetch('http://localhost:5000/products', {
                         method: "POST",
                         headers: {

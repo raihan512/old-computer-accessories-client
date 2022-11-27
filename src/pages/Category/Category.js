@@ -6,7 +6,7 @@ const Category = () => {
     const categoryItems = useLoaderData()
 
     return (
-        <div>
+        <div className='min-h-screen'>
             <h3 className='text-3xl font-bold text-center my-10'>
                 {
                     categoryItems.length > 0 ?
@@ -14,7 +14,7 @@ const Category = () => {
                         <>No Items Available</>
                 }
             </h3>
-            <div className='max-w-[1200PX] mx-auto'>
+            <div className='max-w-[1200PX] mx-auto px-10'>
                 {
                     categoryItems.map(categoryItem => <CategorySingleItem
                         key={categoryItem._id}

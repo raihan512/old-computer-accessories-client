@@ -4,19 +4,19 @@ import BannerItem from './BannerItem/BannerItem';
 const banners = [
     {
         id: 1,
-        img: 'https://i.ibb.co/bshH9Sq/7-reasons-why-you-should-learn-python.jpg',
+        img: 'https://i.ibb.co/x2dQd56/z-Mq-HIN6-OM0-Sl49-Y9-Hcvib-LIzo-Pm-LQJtre2-Ip-OTBV.webp',
         prev: 3,
         next: 2,
     },
     {
         id: 2,
-        img: 'https://i.ibb.co/4sbzr4j/apa-itu-javascript.png',
+        img: 'https://i.ibb.co/Jx32VGQ/Js5-Icjmh3-FPKo-ICh-E4j-Ztd73wp24-Lb-MGxn-Vw-FL2n.webp',
         prev: 1,
         next: 3,
     },
     {
         id: 3,
-        img: 'https://i.ibb.co/z8MnrkT/meta-image.png',
+        img: 'https://i.ibb.co/vqnw60R/cm-Qitt-Utx-XCDHIk6y-CPa-Nv-H4jz5-TWGtat-EI5ag2j.webp',
         prev: 2,
         next: 1,
     }
