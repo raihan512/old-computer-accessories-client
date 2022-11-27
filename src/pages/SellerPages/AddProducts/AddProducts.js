@@ -109,7 +109,7 @@ const AddProducts = () => {
                     </div>
                     {/* Add years of use */}
                     <div>
-                        <input type='number' {...register('usedFor', { required: true })} placeholder="How many years used" className="input input-bordered input-accent w-full text-lg font-semibold mt-3" />
+                        <input type='text' {...register('usedFor', { required: true })} placeholder="How many years used" className="input input-bordered input-accent w-full text-lg font-semibold mt-3" />
                         {errors.usedFor && <span className='text-red-500'>Add how many years you used it</span>}
                     </div>
                     {/* Add Product Image */}
