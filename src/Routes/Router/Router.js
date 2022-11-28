@@ -4,6 +4,7 @@ import SignIn from "../../pages/Auth/SignIn/SignIn";
 import SignUp from "../../pages/Auth/SignUp/SignUp";
 import Category from "../../pages/Category/Category";
 import Home from "../../pages/Home/Home/Home";
+import ProductDetails from "../../pages/ProductDetails/ProductDetails";
 import AddProducts from "../../pages/SellerPages/AddProducts/AddProducts";
 import MyProducts from "../../pages/SellerPages/MyProducts/MyProducts";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
@@ -26,6 +27,11 @@ export const Router = createBrowserRouter([
                 path: '/addproducts',
                 element: <AddProducts></AddProducts>,
                 loader: () => fetch('http://localhost:5000/categories')
+            },
+            {
+                path: '/productdetails/:id',
+                loader: ({ params }) => fetch(`http://localhost:5000/productdetails/${params.id}`),
+                element: <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>
             },
             {
                 path: '/myproducts',

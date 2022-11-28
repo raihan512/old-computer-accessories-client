@@ -22,7 +22,7 @@ const CategorySingleItem = ({ categoryItem }) => {
                         <>{productDescription.slice(0, 200)}...</> :
                         productDescription}</p>
                 <div className='w-full flex justify-end'>
-                    <Link to={_id}><button className='btn bg-accent border-0 text-lg font-semibold w-40 hover:pb-2'>See Details</button></Link>
+                    <Link to={`/productdetails/${_id}`}><button className='btn bg-accent border-0 text-lg font-semibold w-40'>See Details</button></Link>
                 </div>
             </div>
         </div>
