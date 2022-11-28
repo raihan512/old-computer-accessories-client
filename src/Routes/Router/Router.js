@@ -4,6 +4,10 @@ import SignIn from "../../pages/Auth/SignIn/SignIn";
 import SignUp from "../../pages/Auth/SignUp/SignUp";
 import Blog from "../../pages/Blog/Blog";
 import Category from "../../pages/Category/Category";
+import AllBuyers from "../../pages/Dashboard/Buyers/Buyers";
+import Allseller from "../../pages/Dashboard/Seller/Seller";
+import DashboardLayout from "../../pages/Dashboard/DashboardLayout/DashboardLayout";
+import ReportedItems from "../../pages/Dashboard/ReportedItems/ReportedItems";
 import ErrorPage from "../../pages/ErrorPage/ErrorPage";
 import Home from "../../pages/Home/Home/Home";
 import ProductDetails from "../../pages/ProductDetails/ProductDetails";
@@ -27,8 +31,7 @@ export const Router = createBrowserRouter([
             },
             {
                 path: '/addproducts',
-                element: <AddProducts></AddProducts>,
-                loader: () => fetch('http://localhost:5000/categories')
+                element: <AddProducts></AddProducts>
             },
             {
                 path: '/productdetails/:id',
@@ -52,7 +55,26 @@ export const Router = createBrowserRouter([
                 element: <SignUp></SignUp>
             }
         ]
-    }, {
+    },
+    {
+        path: '/dashboard/:usercategory',
+        element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
+        children: [
+            {
+                path: '/dashboard/:usercategory/allsellers',
+                element: <Allseller></Allseller>
+            },
+            {
+                path: '/dashboard/:usercategory/allbuyers',
+                element: <AllBuyers></AllBuyers>
+            },
+            {
+                path: '/dashboard/:usercategory/reporteditems',
+                element: <ReportedItems></ReportedItems>
+            }
+        ]
+    },
+    {
         path: '*',
         element: <ErrorPage></ErrorPage>
     }

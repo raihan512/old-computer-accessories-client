@@ -1,18 +1,31 @@
 import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
-import { useLoaderData, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import "react-datepicker/dist/react-datepicker.css";
 import toast from 'react-hot-toast';
 import { AuthProvider } from '../../../Contexts/Authprovider/AuthContext';
+import { useQuery } from '@tanstack/react-query';
 
 const AddProducts = () => {
     const { user } = useContext(AuthProvider);
     const navigate = useNavigate();
-    const productCategories = useLoaderData();
+
     const { register, handleSubmit, formState: { errors } } = useForm();
     const imageHostKey = process.env.REACT_APP_imgbb_key;
 
     const currentTime = `${new Date().toDateString()} ${new Date().toLocaleTimeString()}`
+
+
+
+
+    const { data: productCategories = [] } = useQuery({
+        queryKey: ['productCategories'],
+        queryFn: async () => {
+            const res = await fetch('http://localhost:5000/categories');
+            const data = await res.json();
+            return data;
+        }
+    })
 
 
     const handleAddProducts = data => {

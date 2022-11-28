@@ -7,20 +7,23 @@ const Navbar = () => {
     const { user, signout } = useContext(AuthProvider);
     const navigate = useNavigate();
 
+
     const email = user?.email;
-    const { data: userCategory = [] } = useQuery({
+    const { data: userCategory = [], refetch } = useQuery({
         queryKey: ['userCategory', email],
         queryFn: async () => {
             const res = await fetch(`http://localhost:5000/users?email=${email}`)
             const data = await res.json();
+            refetch();
             return data;
         }
     })
+
     const menuItems = <>
         <li className='text-black font-semibold uppercase text-lg'><Link to='/'>Home</Link></li>
         <>
             {
-                user && <li className='text-black font-semibold uppercase text-lg'><Link to='/'>Dashboard</Link></li>
+                user && <li className='text-black font-semibold uppercase text-lg'><Link to={`/dashboard/${userCategory?.category}`}>Dashboard</Link></li>
             }
         </>
         <>

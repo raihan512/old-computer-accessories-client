@@ -1,0 +1,66 @@
+[
+    {
+        "_id": {
+            "$oid": "6384f5edbe913683ec681cb0"
+        },
+        "name": "sahadat hossain",
+        "email": "sahadatblog13@gmail.com",
+        "category": "buyer"
+    },
+    {
+        "_id": {
+            "$oid": "6384f616be913683ec681cb1"
+        },
+        "name": "Messi",
+        "email": "messi@gmail.com",
+        "category": "buyer"
+    },
+    {
+        "_id": {
+            "$oid": "6384f65ebe913683ec681cb2"
+        },
+        "name": "Ronaldo",
+        "email": "ronaldo@gmail.com",
+        "category": "seller"
+    },
+    {
+        "_id": {
+            "$oid": "6384f736be913683ec681cb3"
+        },
+        "name": "Admin",
+        "email": "admin@mail.com",
+        "category": "admin"
+    },
+    {
+        "_id": {
+            "$oid": "6384f0f9be913683ec681ca0"
+        },
+        "name": "Akash Rahman",
+        "email": "akash@gmail.com",
+        "category": "seller"
+    },
+    {
+        "_id": {
+            "$oid": "6384f219be913683ec681ca4"
+        },
+        "name": "Mehedi Hasan",
+        "email": "mehedi@gmail.com",
+        "category": "seller"
+    },
+    {
+        "_id": {
+            "$oid": "6384f2cdbe913683ec681ca7"
+        },
+        "name": "Mohammad Prodip",
+        "email": "prodip@gmail.com",
+        "category": "seller"
+    },
+    {
+        "_id": {
+            "$oid": "6384f5dabe913683ec681caf"
+        },
+        "name": "Raihan Gazi",
+        "email": "raihangazi1024@gmail.com",
+        "category": "buyer"
+    }
+]

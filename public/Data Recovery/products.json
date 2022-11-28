@@ -1,0 +1,230 @@
+[
+    {
+        "_id": {
+            "$oid": "6384f08bbe913683ec681c9e"
+        },
+        "productname": "AMD Ryzen 5 5600 Processor",
+        "originalPrice": "17000",
+        "resalePrice": "14000",
+        "productCondition": "excellent",
+        "productCategory": "63807b8c1ef1b99d601c9717",
+        "phone": "01734768772",
+        "location": "Gulshan, Dhaka, Bangladesh",
+        "purchasedYear": "2022",
+        "usedFor": "2 Months",
+        "productImg": "https://i.ibb.co/0M5pCBm/amd-ryzen-3-4100-01-500x500.jpg",
+        "productDescription": "AMD Ryzen 5 5600 Processor has 6 processor cores, 12 threads, and an astonishingly efficient 45-65W TDP. This processor stands with 3.5GHz Base Clock, 4.4GHz Max Boost Clock, 3MB L2 Cache, 32 MB L3 Cache with AM4 Package, and TSMC 7nm FinFET CMOS. This processor is built with PCIe 3.0 x8 and Wraith Spire Thermal Solution. The AMD Ryzen 5 5600 Processor provides DDR4 Up to 3200MHz memory with 2 memory channels. It has AMD StoreMI Technology which is a fast and easy way to expand and accelerate the storage in a desktop PC with an AMD Ryzen processor. AMD StoreMI technology is a powerful tool for PC enthusiasts that want to improve load times, boot times, file management, or system responsiveness. Whatever your storage acceleration needs, AMD StoreMI technology automatically pairs your most-used files with an SSD cache for peak performance. MD StoreMI technology can get files running at SSD-like speeds. Simply add an SSD to your system and let StoreMI do the rest. It also has AMD \"Zen 3\" Core Architecture with the fastest cores in the world for PC gamers. The \"Zen 3\" architecture represents the most comprehensive design overhaul of the \"Zen\" era. Over 20 major changes include wider and more flexible execution resources; significantly more load/store bandwidth to feed execution; and a streamlined front-end to get more threads in flight and do it faster. The \"Zen 3\" architecture can extract an average of 19% additional performance from every MHz of frequency relative to the previous generation2. This is a historically large generational improvement in IPC and a major player in this architecture's ability to deliver unmatched single-core performance. The \"Zen 3\" architecture transitions to a new \"unified complex\" design that brings 8 cores and 32MB of L3 cache into a single group of resources. This dramatically reduces core-to-core and core-to-cache latencies by making every element of the die a next-door neighbor with minimal communication time. Latency-sensitive tasks like PC gaming especially benefit from this change, as tasks now have direct access to twice as much L3 cache versus the Zen 2. It also features the AMD Ryzen VR-Ready Premium for the best possible VR experience possible. AMD Ryzen 5 5600 Processor offers a 3-Year Warranty.",
+        "postedTime": "Mon Nov 28 2022 11:29:13 PM",
+        "sellerName": "Mursalin Piash",
+        "sellerEmail": "mursalin@gmail.com"
+    },
+    {
+        "_id": {
+            "$oid": "6384f0cfbe913683ec681c9f"
+        },
+        "productname": "ASUS TUF GAMING B450M-PRO II AMD AM4 Micro-ATX Gaming Motherboard",
+        "originalPrice": "11000",
+        "resalePrice": "8000",
+        "productCondition": "good",
+        "productCategory": "63807b8c1ef1b99d601c9718",
+        "phone": "01734768771",
+        "location": "Gulshan",
+        "purchasedYear": "2019",
+        "usedFor": "2 Years",
+        "productImg": "https://i.ibb.co/Qjbp0Nj/b450m-steel-legend-500x500.jpg",
+        "productDescription": "The ASUS TUF GAMING B450M-PRO II Motherboard (China Version) supports AMD AM4 Socket for AMD Ryzen 5000 Series/ 5000 G-Series/ 4000 G-Series/ 3rd/2nd/1st Gen AMD Ryzen/ 2nd and 1st Gen AMD Ryzen with Radeon Vega Graphics/ Athlon with Radeon Vega Graphics Processors. It comes with Aura Sync RGB LED lighting, DDR4 4400MHz support, Dual M.2, and native USB 3.1 Gen 2. This motherboard features an unprecedented 108dB signal-to-noise ratio for the stereo line-out and a 103dB SNR for the line-in, providing pristine audio quality. It offers exclusive DTS Custom audio that delivers positional cues to stereo headphones, helping you to pinpoint enemies and action. ASUS TUF GAMING B450M-PRO II Motherboard comes with Fan Xpert 2+ that ensures every fan achieves the best balance of cooling performance and acoustics. Military-grade TUF chokes deliver rock-steady power to the CPU, helping to improve system stability. Its TUF Capacitors offer+20% temperature tolerance and 5X-longer lifespan. Lastly, TUF MOSFETS are military-grade MOSFETs with lower RDS(on). SafeSlot is the PCIe slot reinvented by ASUS and engineered to provide superior retention and shearing resistance. Manufactured in a single step using a new insert-molding process, SafeSlot integrates fortifying metal for an inherently stronger slot, which is then firmly anchored to the PCB through additional solder points. With x4 PCI Express 3.0 bandwidth, M.2 supports up to 32Gbps data-transfer speeds. A well-tuned system deserves a matching aesthetic. ASUS Aura offers full RGB lighting control with a variety of functional presets for the built-in RGB LEDs as well as strips connected to the onboard RGB headers. The ASUS TUF GAMING B450M-PRO II Motherboard (China Version) comes with 3 years warranty.",
+        "postedTime": "Mon Nov 28 2022 11:32:08 PM",
+        "sellerName": "Mursalin Piash",
+        "sellerEmail": "mursalin@gmail.com"
+    },
+    {
+        "_id": {
+            "$oid": "6384f149be913683ec681ca1"
+        },
+        "productname": "Antec Neo Eco Gold Zen 500W Non Modular Power Supply",
+        "originalPrice": "6500",
+        "resalePrice": "3000",
+        "productCondition": "fair",
+        "productCategory": "63807b8c1ef1b99d601c971b",
+        "phone": "01734768773",
+        "location": "Kamrangir char,Dhaka",
+        "purchasedYear": "2021",
+        "usedFor": "1 Year",
+        "productImg": "https://i.ibb.co/PF2g9C4/kratos-e1-600w-500x500.jpg",
+        "productDescription": "The new NeoECO Gold ZEN series features high performance with an 80 PLUS Gold rating, achieving up to 92% efficiency and gives you savings unheard of from other power supplies. Featuring a 120mm whisper-quiet high-quality fan and CircuitShield Industrial Grade Protection-all backed up by our 5-year Antec Quality Warranty, NeoECO Gold ZEN series offers a highly efficient, affordable power solution. We stand by the quality and safety of the NeoECO Gold ZEN Supplies, offering a 5-year parts and labor warranty and unlimited access to our incomparable technical support and customer service. Japanese capacitors ensure the tightest DC stability and regulation, for reliability that you and your system can count on. A server-class Half-Bridge LLC design with a synchronous rectification based on a DC-DC topology. Features a Thermal Manager, an advanced low voltage fan control for optimal heat & noise management and will allow your PSU to stay at an optimal temperature.",
+        "postedTime": "Mon Nov 28 2022 11:34:25 PM",
+        "sellerName": "Akash Rahman",
+        "sellerEmail": "akash@gmail.com"
+    },
+    {
+        "_id": {
+            "$oid": "6384f183be913683ec681ca2"
+        },
+        "productname": "Corsair Vengeance LPX 4GB (1x4GB) DDR4 DRAM 2400MHz",
+        "originalPrice": "3200",
+        "resalePrice": "1500",
+        "productCondition": "fair",
+        "productCategory": "63807b8c1ef1b99d601c9719",
+        "phone": "01734768773",
+        "location": "Banani",
+        "purchasedYear": "2021",
+        "usedFor": "2 years",
+        "productImg": "https://i.ibb.co/2Z1mB36/VENG-LPX-BLK-01-500x500.png",
+        "productDescription": "Vengeance LPX memory is designed for high-performance overclocking. The heatspreader is made of pure aluminum for faster heat dissipation, and the eight-layer PCB helps manage heat and provides superior overclocking headroom. Each IC is individually screened for performance potential. The DDR4 form factor is optimized for the latest Intel X99 Series motherboards and offers higher frequencies, greater bandwidth, and lower power consumption than DDR3 modules. Vengeance LPX DDR4 modules are compatibility-tested across X99 Series motherboards for reliably fast performance. Thereâ€™s XMP 2.0 support for trouble-free automatic overclocking. And, theyâ€™re available in multiple colors to match your motherboard, your components, or just your style.",
+        "postedTime": "Mon Nov 28 2022 11:35:13 PM",
+        "sellerName": "Akash Rahman",
+        "sellerEmail": "akash@gmail.com"
+    },
+    {
+        "_id": {
+            "$oid": "6384f1c1be913683ec681ca3"
+        },
+        "productname": "Gigabyte 8GB DDR4 2666MHz Heatsink Desktop Ram",
+        "originalPrice": "2900",
+        "resalePrice": "1300",
+        "productCondition": "good",
+        "productCategory": "63807b8c1ef1b99d601c9719",
+        "phone": "01734768773",
+        "location": "Cumilla, Bangladesh",
+        "purchasedYear": "2018",
+        "usedFor": "4 Years",
+        "productImg": "https://i.ibb.co/jzDYW5d/8gb-500x500.png",
+        "productDescription": "GIGABYTE Classic Black DRAM modules with selected ICs & hand crafting engineering for the best reliability, compatibility, and performance.The GIGABYTE Memory kit is built on a ten-layer, sophisticatedly engineered PCB that ensures the stability and the high performance of the selected Ics. The heatsink of GIGABYTE Memory kit is designed to offer the best performance.The high quality materials offer better heat dissipation, guaranteeing the stability of the memory kit.All memory modules have been tested through a strict standard test procedure in order to guarantee users the ultimate performance without compromise.GIGABYTE Memory kit supports Intel XMP 2.0 which allows you to get the best performance by enabling a profile while the system stability is guaranteed.",
+        "postedTime": "Mon Nov 28 2022 11:36:07 PM",
+        "sellerName": "Akash Rahman",
+        "sellerEmail": "akash@gmail.com"
+    },
+    {
+        "_id": {
+            "$oid": "6384f255be913683ec681ca5"
+        },
+        "productname": "ASRock H81M-VG4 R4.0 4th Gen Micro ATX MotherboardASRock H81M-VG4 R4.0 4th Gen Micro ATX Motherboard",
+        "originalPrice": "8000",
+        "resalePrice": "5000",
+        "productCondition": "excellent",
+        "productCategory": "63807b8c1ef1b99d601c9718",
+        "phone": "01778638980",
+        "location": "Kamrangir char,Dhaka",
+        "purchasedYear": "2021",
+        "usedFor": "2 Years",
+        "productImg": "https://i.ibb.co/J5PSVkc/h310m-hdv-500x500.jpg",
+        "productDescription": "The ASRock H81M-VG4 R4.0 4th Gen Micro ATX Motherboard supports Intel 4th Generation Intel Core Processors (Socket 1150) and Dual Channel DDR3 1600. The Motherboard comes with 1 PCIe 2.0 x16, 1 PCIe 2.0 x1. It features a D-Sub port for graphic output. It is built with a High-Density Glass Fabric PCB design that reduces the gaps between the PCB layers to protect the motherboard against electrical shorts caused by humidity. This ASRock motherboard uses a Realtek gigabit LAN chip to support extremely fast internet connections. The ASRock H81M-VG4 R4.0 features a solid capacitor design. The motherboard offers full spike protection. It includes various technologies to prevent your motherboard’s components from being damaged by these unexpected voltage spikes. It also comes with ASRock Live Update & APP Shop. The ASRock H81M-VG4 R4.0 comes with 3 years of warranty.",
+        "postedTime": "Mon Nov 28 2022 11:38:38 PM",
+        "sellerName": "Mehedi Hasan",
+        "sellerEmail": "mehedi@gmail.com"
+    },
+    {
+        "_id": {
+            "$oid": "6384f295be913683ec681ca6"
+        },
+        "productname": "Seagate 1TB 2.5 Inch SATA Laptop HDD",
+        "originalPrice": "3650",
+        "resalePrice": "1800",
+        "productCondition": "good",
+        "productCategory": "63807b8c1ef1b99d601c971a",
+        "phone": "01980661033",
+        "location": "Chittagong, Bangladesh",
+        "purchasedYear": "2021",
+        "usedFor": "1 Year",
+        "productImg": "https://i.ibb.co/j5sQVk2/seagate-1tb-01-500x500.jpg",
+        "productDescription": "The Seagate Laptop HDD has a capacity of 1TB. This hard drive has a built-in SATA 6.0Gb/s interface and a 5400RPM speed. This HDD features a Seek time of 13ms and a 2.5-inch form factor. The Seagate SATA 6Gb/s interface improves burst speed, while the Seagate Secure versions provide hardware-based data protection. Desktop or all-in-one PCs, home servers, and entry-level direct-attached storage devices are ideal applications for these hard drives (DAS). Drive retirements are secure and simple using Instant Secure Erase. This HDD comes with a 01-year warranty.",
+        "postedTime": "Mon Nov 28 2022 11:39:47 PM",
+        "sellerName": "Mehedi Hasan",
+        "sellerEmail": "mehedi@gmail.com"
+    },
+    {
+        "_id": {
+            "$oid": "6384f31fbe913683ec681ca8"
+        },
+        "productname": "GIGABYTE GeForce GT 1030 Low Profile D4 2GB Graphics Card",
+        "originalPrice": "50000",
+        "resalePrice": "30000",
+        "productCondition": "good",
+        "productCategory": "63807b8c1ef1b99d601c971c",
+        "phone": "01778638925",
+        "location": "Rajshahi, Bangladesh",
+        "purchasedYear": "2022",
+        "usedFor": "2 Months",
+        "productImg": "https://i.ibb.co/z2kDvcJ/igame-geforce-rtx-4090-vulcan-oc-v-01-500x500.webp",
+        "productDescription": "The GIGABYTE GeForce GT 1030 Low Profile D4 2GB Graphics Card is integrated with 2GB DDR4 64bit memory with Low Profile power consumption ability. This GIGABYTE graphics Card has One-Click overclocking design that can be operated through the AORUS Graphics Engine. In OC Mode, the GIGABYTE GT 1030 Low Profile D4 2GB Graphics Card has a base core clock of 1177MHz and a boost clock of 1417MHz. In Gaming Mode, the core clock is 1151MHz and is boosted up to 1379MHz. The graphics card is also able use the DirectX 12 software and OpenGL 4.5. This card provides the user with one HDMI and DVI-D port that allows for 2 displays to work together simultaneously.",
+        "postedTime": "Mon Nov 28 2022 11:41:47 PM",
+        "sellerName": "Mohammad Prodip",
+        "sellerEmail": "prodip@gmail.com"
+    },
+    {
+        "_id": {
+            "$oid": "6384f374be913683ec681ca9"
+        },
+        "productname": "Intel 10th Gen Core i3 10100F Processor",
+        "originalPrice": "8700",
+        "resalePrice": "5000",
+        "productCondition": "good",
+        "productCategory": "63807b8c1ef1b99d601c9717",
+        "phone": "01778638945",
+        "location": "Barisal, Bangladesh",
+        "purchasedYear": "2022",
+        "usedFor": "4 Months",
+        "productImg": "https://i.ibb.co/KscdDp4/i3-10100-500x500.jpg",
+        "productDescription": "This processor comes with a new breed that come without an integrated GPU, so a separate graphics card is required for its functionality. This new 10th gen Comet Lake microarchitecture is manufactured with the 14nm process that comes with four cores but lacks in HyperThreading. As this chip is updated to the latest BIOS revision, it nicely fits into any Intel 300-series motherboard. Focusing on this, all the major motherboard manufacturers have already started BIOS updates for their 300-series lineup\n\n",
+        "postedTime": "Mon Nov 28 2022 11:43:03 PM",
+        "sellerName": "Mohammad Prodip",
+        "sellerEmail": "prodip@gmail.com"
+    },
+    {
+        "_id": {
+            "$oid": "6384f3ddbe913683ec681caa"
+        },
+        "productname": "Gamdias Kratos E1-600W RGB Power Supply",
+        "originalPrice": "8000",
+        "resalePrice": "5500",
+        "productCondition": "good",
+        "productCategory": "63807b8c1ef1b99d601c971b",
+        "phone": "01734768798",
+        "location": "Khulna, Bangladesh",
+        "purchasedYear": "2020",
+        "usedFor": "2",
+        "productImg": "https://i.ibb.co/NpY3gWn/toughpower-gf3-01-500x500.webp",
+        "productDescription": "Converting less heat and being more power-efficient, the KRATOS E1-600 delivers up to 80% energy efficiency and supports C6/C7 power state. Accordingly, a deeper lower power sleep states for further efficiency is achieved. KRATOS E1-600 offers unparalleled lighting effects. By pressing one button for 3 seconds, the lighting can be easily switched between motherboard manufacture sync and the built-in 30 lighting effects, Multi-color, and LED off. With RGB motherboard sync (5V 3-pin connection), addressable RGB lighting can be synchronized via motherboard manufacture software creating a consistent style throughout your computer. KRATOS E1-600 offers you 80% energy efficiency supplying stable power while operating at lower sound levels. With built-in RGB lighting effects and addressable LEDs, effortlessly gives this power supply a unique style of its own.\n\n",
+        "postedTime": "Mon Nov 28 2022 11:44:52 PM",
+        "sellerName": "Mohammad Prodip",
+        "sellerEmail": "prodip@gmail.com"
+    },
+    {
+        "_id": {
+            "$oid": "6384f459be913683ec681cab"
+        },
+        "productname": "Samsung 870 EVO 250GB 2.5 Inch SATA III Internal SSD",
+        "originalPrice": "8000",
+        "resalePrice": "4500",
+        "productCondition": "fair",
+        "productCategory": "63807b8c1ef1b99d601c971a",
+        "phone": "01778238980",
+        "location": "Jessore, bangladesh",
+        "purchasedYear": "2019",
+        "usedFor": "3 Years",
+        "productImg": "https://i.ibb.co/WyVwMky/870-evo-01-500x500.jpg",
+        "productDescription": "The latest 870 EVO inherits the legacy of Samsungâ€™s pioneering SSD technology, that boasting upgraded performance, reliability, and compatibility to suit the needs of anyone from contents creators, IT professionals. Samsung 870 EVO Internal SSD comes with Highly reliable and sustainable performance. This SSD featurted with Up to 560 MB/s sequential read and 530 MB/s write, Up to 2,400 TBW guaranteed endurance.\n\n",
+        "postedTime": "Mon Nov 28 2022 11:47:01 PM",
+        "sellerName": "Mohammad Prodip",
+        "sellerEmail": "prodip@gmail.com"
+    },
+    {
+        "_id": {
+            "$oid": "6384f52fbe913683ec681cac"
+        },
+        "productname": "Palit GeForce GTX 1050 Ti StormX 4GB GDDR5 Graphics Card",
+        "originalPrice": "65000",
+        "resalePrice": "23000",
+        "productCondition": "fair",
+        "productCategory": "63807b8c1ef1b99d601c971b",
+        "phone": "01778638980",
+        "location": "Kamrangir char,Dhaka",
+        "purchasedYear": "2017",
+        "usedFor": "5",
+        "productImg": "https://i.ibb.co/2SMqbkv/rog-strix-lc-geforce-rtx-3090-ti-oc-edition-01-500x500.jpg",
+        "productDescription": "The Palit GeForce GTX 1050 Ti StormX 4GB GDDR5 Graphics Card is equipped with solid capacitors, ferrite core chokes, and an improved PWM design. It brings you better performance and thermal solutions. Turn your PC into a true gaming rig with the fast, powerful GeForce GTX 1050 Ti. It's powered by NVIDIA Pascal - the most advanced GPU architecture ever created. GeForce GTX graphics cards are the most advanced ever created. Discover unprecedented performance, power efficiency, and next-generation gaming experiences. Improved performance and power efficiency over previous-generation graphics cards. You can enjoy classic and modern games at 1080p @ 60 FPS. It features TurboFan Blade. Inspired by the power of jet engines, the TurboFan Blade is designed to improve cooling performance by generating a powerful air stream and air pressure. ThunderMaster is a utility program for the graphics card under Windows and provides you to boost the performance of the graphics card and monitor the GPU information, which will only function correctly in conjunction with your new graphics adapter. It also features NVIDIA ANSEL IN VR. You can capture and create in-game screenshots that can be viewed in 360 degrees. Compose your screenshots from any position, adjust them with post-process filters, capture 4K HDR images in high-fidelity formats, and share them in 360 degrees using your mobile phone, PC, or VR headset. The Palit GeForce GTX 1050 Ti StormX 4GB GDDR5 Graphics Card has a 01-year warranty.",
+        "postedTime": "Mon Nov 28 2022 11:50:23 PM",
+        "sellerName": "Mursalin Piash",
+        "sellerEmail": "mursalin@gmail.com"
+    }
+]
