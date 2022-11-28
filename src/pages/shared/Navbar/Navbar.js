@@ -8,7 +8,7 @@ const Navbar = () => {
     const navigate = useNavigate();
 
     const email = user?.email;
-    const { data: userCategory = [], isLoading } = useQuery({
+    const { data: userCategory = [] } = useQuery({
         queryKey: ['userCategory', email],
         queryFn: async () => {
             const res = await fetch(`http://localhost:5000/users?email=${email}`)
@@ -16,21 +16,22 @@ const Navbar = () => {
             return data;
         }
     })
-
-
     const menuItems = <>
-        <li><Link to='/'>Home</Link></li>
+        <li className='text-black font-semibold uppercase text-lg'><Link to='/'>Home</Link></li>
         <>
             {
-                user && <li><Link to='/'>Dashboard</Link></li>
+                user && <li className='text-black font-semibold uppercase text-lg'><Link to='/'>Dashboard</Link></li>
             }
         </>
         <>
             {
-                userCategory.category === 'seller' && <><li><Link to='/addproducts'>Add Product</Link></li>  <li><Link to='/myproducts'>My Product</Link></li></>
+                userCategory.category === 'seller' && <>
+                    <li className='text-black font-semibold uppercase text-lg'>
+                        <Link to='/addproducts'>Add Product</Link></li><li className='text-black font-semibold uppercase text-lg'><Link to='/myproducts'>My Product</Link>
+                    </li></>
             }
         </>
-        <li><Link to='/blog'>Blog</Link></li>
+        <li className='text-black font-semibold uppercase text-lg'><Link to='/blog'>Blog</Link></li>
 
     </>
 
@@ -54,7 +55,7 @@ const Navbar = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost normal-case text-xl font-bold">PcParts</Link>
+                <Link to='/' className="btn btn-ghost uppercase text-xl font-bold"><strong>PcParts</strong></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
@@ -66,11 +67,11 @@ const Navbar = () => {
                     user ?
                         // if user available then show SignOut button
                         <>
-                            <button className='btn' onClick={handleLogut}>SignOut</button>
+                            <button className='btn bg-error border-0 text-lg font-semibold' onClick={handleLogut}>SignOut</button>
                         </> :
                         // if user is not available then show SignIn button
                         <>
-                            <button className='btn'><Link to='/signin'>SignIn</Link></button>
+                            <button className='btn bg-accent border-0 text-lg font-semibold'><Link to='/signin'>SignIn</Link></button>
                         </>
                 }
 

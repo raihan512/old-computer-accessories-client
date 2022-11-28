@@ -4,6 +4,7 @@ import SignIn from "../../pages/Auth/SignIn/SignIn";
 import SignUp from "../../pages/Auth/SignUp/SignUp";
 import Blog from "../../pages/Blog/Blog";
 import Category from "../../pages/Category/Category";
+import ErrorPage from "../../pages/ErrorPage/ErrorPage";
 import Home from "../../pages/Home/Home/Home";
 import ProductDetails from "../../pages/ProductDetails/ProductDetails";
 import AddProducts from "../../pages/SellerPages/AddProducts/AddProducts";
@@ -51,5 +52,8 @@ export const Router = createBrowserRouter([
                 element: <SignUp></SignUp>
             }
         ]
+    }, {
+        path: '*',
+        element: <ErrorPage></ErrorPage>
     }
 ])

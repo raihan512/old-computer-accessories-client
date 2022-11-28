@@ -7,7 +7,7 @@ const ProductDetails = () => {
 
     console.log(productInfo);
     return (
-        <div className='max-w-[1200px] mx-auto my-40'>
+        <div className='max-w-[1200px] mx-auto mt-10 mb-40'>
             <h3 className='text-xl md:text-2xl lg:text-4xl font-semibold mb-3'><strong>{productname}</strong></h3>
             <p className='text-lg font-semibold mb-3'>Posted at {postedTime}</p>
             <div className='md:flex justify-between items-center'>
