@@ -18,7 +18,7 @@ const BookingModal = ({ booking, setBooking }) => {
         const meetingLocation = form.meetingLocation.value;
         const bookingDetails = { productName, buyerName, buyerEmail, resalePrice, buyerPhone, meetingLocation }
         // Send booking form data to backend
-        fetch('http://localhost:5000/bookings', { method: "POST", headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(bookingDetails) })
+        fetch('https://pcparts-server.vercel.app/bookings', { method: "POST", headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(bookingDetails) })
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged) {

@@ -1,6 +1,14 @@
 [
     {
         "_id": {
+            "$oid": "6384f736be913683ec681cb3"
+        },
+        "name": "Admin",
+        "email": "admin@mail.com",
+        "category": "admin"
+    },
+    {
+        "_id": {
             "$oid": "6384f5edbe913683ec681cb0"
         },
         "name": "sahadat hossain",

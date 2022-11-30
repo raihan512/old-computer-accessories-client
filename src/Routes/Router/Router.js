@@ -29,7 +29,7 @@ export const Router = createBrowserRouter([
             },
             {
                 path: '/category/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`),
+                loader: ({ params }) => fetch(`https://pcparts-server.vercel.app/products/${params.id}`),
                 element: <PrivateRoute><Category></Category></PrivateRoute>
             },
             {
@@ -38,7 +38,7 @@ export const Router = createBrowserRouter([
             },
             {
                 path: '/productdetails/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/productdetails/${params.id}`),
+                loader: ({ params }) => fetch(`https://pcparts-server.vercel.app/productdetails/${params.id}`),
                 element: <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>
             },
             {
@@ -55,7 +55,7 @@ export const Router = createBrowserRouter([
             },
             {
                 path: '/payment/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/bookings?id=${params.id}`),
+                loader: ({ params }) => fetch(`https://pcparts-server.vercel.app/bookings?id=${params.id}`),
                 element: <Payment></Payment>
             },
             {

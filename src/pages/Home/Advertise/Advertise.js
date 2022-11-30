@@ -9,7 +9,7 @@ const Advertise = () => {
     const { data: advertisedProducts = [] } = useQuery({
         queryKey: ['advertisedProducts'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/products?advertise=true');
+            const res = await fetch('https://pcparts-server.vercel.app/products?advertise=true');
             const data = await res.json();
             return data;
         }

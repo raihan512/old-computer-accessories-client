@@ -10,13 +10,13 @@ const MyProducts = () => {
     const { data: userProducts = [], refetch } = useQuery({
         queryKey: ['userProduct', email],
         queryFn: async () => {
-            const res = fetch(`http://localhost:5000/products?email=${email}`);
+            const res = fetch(`https://pcparts-server.vercel.app/products?email=${email}`);
             const data = (await res).json();
             return data;
         }
     })
     const handleDeleteProduct = id => {
-        fetch(`http://localhost:5000/products/${id}`, {
+        fetch(`https://pcparts-server.vercel.app/products/${id}`, {
             method: "DELETE",
             headers: {
                 'content-type': 'application/json'
@@ -33,7 +33,7 @@ const MyProducts = () => {
     }
 
     const handleAdvertiseProduct = id => {
-        fetch(`http://localhost:5000/products/${id}`, {
+        fetch(`https://pcparts-server.vercel.app/products/${id}`, {
             method: "PATCH",
             headers: {
                 'content-type': 'application/json'

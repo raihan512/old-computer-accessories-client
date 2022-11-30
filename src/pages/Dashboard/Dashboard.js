@@ -14,7 +14,7 @@ const Dashboard = () => {
     const { data: userInfo = [] } = useQuery({
         queryKey: ['userInfo', email],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/users?email=${email}`);
+            const res = await fetch(`https://pcparts-server.vercel.app/users?email=${email}`);
             const data = await res.json();
             return data;
         }
@@ -33,9 +33,7 @@ const Dashboard = () => {
             {/* Buyer Info */}
             {
                 userInfo.category === 'buyer' && <>
-                    <p>You Are a Buyer</p>
                     <h3 className='text-2xl text-center font-semibold'>Welcome to your dashboard Mr/Mrs <strong>{user.displayName}</strong></h3>
-                    <p>My Orders</p>
                 </>
             }
             {/* Admin Info */}

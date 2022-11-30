@@ -21,7 +21,7 @@ const AddProducts = () => {
     const { data: productCategories = [] } = useQuery({
         queryKey: ['productCategories'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/categories');
+            const res = await fetch('https://pcparts-server.vercel.app/categories');
             const data = await res.json();
             return data;
         }
@@ -45,7 +45,7 @@ const AddProducts = () => {
                     data.postedTime = currentTime;
                     data.sellerName = user.displayName;
                     data.sellerEmail = user.email;
-                    fetch('http://localhost:5000/products', {
+                    fetch('https://pcparts-server.vercel.app/products', {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"
@@ -123,8 +123,8 @@ const AddProducts = () => {
                     </div>
                     {/* Add years of use */}
                     <div>
-                        <input type='text' {...register('usedFor', { required: true })} placeholder="How many years used" className="input input-bordered input-accent w-full text-lg font-semibold mt-3" />
-                        {errors.usedFor && <span className='text-red-500'>Add how many years you used it</span>}
+                        <input type='text' {...register('usedFor', { required: true })} placeholder="How many days used? like: 3months/3years" className="input input-bordered input-accent w-full text-lg font-semibold mt-3" />
+                        {errors.usedFor && <span className='text-red-500'>Add how many days used? like: 3months/3years</span>}
                     </div>
                     {/* Add Product Image */}
                     <div>

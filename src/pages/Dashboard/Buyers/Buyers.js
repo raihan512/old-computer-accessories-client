@@ -7,7 +7,7 @@ const Buyers = () => {
     const { data: allUsers = [], refetch } = useQuery({
         queryKey: ['allUsers'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/users`);
+            const res = await fetch(`https://pcparts-server.vercel.app/users`);
             const data = await res.json();
             return data;
         }
@@ -16,7 +16,7 @@ const Buyers = () => {
     const buyers = allUsers.filter(users => users.category === 'buyer');
     // Delete Buyer function
     const handleDeletebuyer = id => {
-        fetch(`http://localhost:5000/users/${id}`, {
+        fetch(`https://pcparts-server.vercel.app/users/${id}`, {
             method: "DELETE",
             headers: {
                 'Content-Type': 'application/json'

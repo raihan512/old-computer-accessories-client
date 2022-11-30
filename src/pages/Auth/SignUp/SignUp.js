@@ -43,7 +43,7 @@ const SignUp = () => {
     // Add user to the database
     const addUser = (name, email, category) => {
         const user = { name, email, category }
-        fetch('http://localhost:5000/users', {
+        fetch('https://pcparts-server.vercel.app/users', {
             method: 'POST',
             headers: {
                 "content-type": "application/json",

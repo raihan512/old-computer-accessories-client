@@ -10,7 +10,7 @@ const Navbar = () => {
     const { data: userCategory = [], refetch } = useQuery({
         queryKey: ['userCategory', email],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/users?email=${email}`)
+            const res = await fetch(`https://pcparts-server.vercel.app/users?email=${email}`)
             const data = await res.json();
             refetch();
             return data;

@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
 
 const Seller = () => {
-    const url = 'http://localhost:5000/users';
+    const url = 'https://pcparts-server.vercel.app/users';
     // Load all users from backend
     const { data: allUsers = [], refetch } = useQuery({
         queryKey: ['allUsers'],

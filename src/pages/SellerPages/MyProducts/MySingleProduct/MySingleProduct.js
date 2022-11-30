@@ -1,12 +1,11 @@
 import React from 'react';
 
 const MySingleProduct = ({ product, handleDeleteProduct, handleAdvertiseProduct }) => {
-    const { productImg, productname, originalPrice, resalePrice, location, phone } = product;
-    console.log(product);
+    const { productImg, productname, originalPrice, resalePrice, location, phone, sold } = product;
 
     return (
         <div className="card w-80 md:w-96 bg-base-100 border rounded-md hover:shadow-xl relative mx-auto">
-            <div className="badge badge-secondary absolute top-2 right-2">NEW</div>
+            <div className="badge badge-primary absolute top-2 right-2">{sold ? 'Sold' : 'Available'}</div>
             <figure><img src={productImg} alt={productname} className='h-40' /></figure>
             <div className="p-2">
                 <h2 className="truncate text-lg font-bold">

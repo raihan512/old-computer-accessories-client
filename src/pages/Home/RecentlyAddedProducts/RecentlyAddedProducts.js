@@ -32,7 +32,7 @@ const RecentlyAddedProducts = () => {
     const { data: allProducts = [] } = useQuery({
         queryKey: ['allProducts'],
         queryFn: async () => {
-            const res = fetch('http://localhost:5000/products');
+            const res = fetch('https://pcparts-server.vercel.app/products');
             const data = (await res).json();
             return data;
         }

@@ -8,7 +8,7 @@ const CategoryItem = ({ category }) => {
             <figure><img src={img} alt={title} className='h-20 md:h-40' /></figure>
             <div className="">
                 <h2 className="card-title">{title}</h2>
-                <p>{desc}</p>
+                <p className='my-2'>{desc}</p>
                 <button className="bg-accent py-2 w-full text-white font-semibold btn-primary">
                     <Link to={`category/${_id}`}> See all {`${title}`}</Link>
                 </button>

@@ -3,7 +3,8 @@ import React from 'react';
 const ReportedItems = () => {
     return (
         <div>
-            <h3>Reported Items</h3>
+            <h2 className='text-center text-xl md:text-4xl text-black uppercase font-bold my-5 md:my-10'>Reported Items Functionality still not added</h2>
+
         </div>
     );
 };
