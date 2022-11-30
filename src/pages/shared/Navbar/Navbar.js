@@ -25,6 +25,11 @@ const Navbar = () => {
             }
         </>
         <>
+            {userCategory.category === 'buyer' && <>
+                <li className='text-black font-semibold uppercase text-lg'>
+                    <Link to='/mybookings'>My Bookings</Link></li></>}
+        </>
+        <>
             {
                 userCategory.category === 'seller' && <>
                     <li className='text-black font-semibold uppercase text-lg'>

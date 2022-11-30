@@ -15,6 +15,8 @@ import AddProducts from "../../pages/SellerPages/AddProducts/AddProducts";
 import MyProducts from "../../pages/SellerPages/MyProducts/MyProducts";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import AdminRoute from "../AdminRoute/AdminRoute";
+import Payment from "../../pages/Payment/Payment";
+import MyBookings from "../../pages/MyBookings/MyBookings";
 
 export const Router = createBrowserRouter([
     {
@@ -44,8 +46,17 @@ export const Router = createBrowserRouter([
                 element: <MyProducts></MyProducts>
             },
             {
-                path: 'blog',
+                path: '/mybookings',
+                element: <MyBookings></MyBookings>
+            },
+            {
+                path: '/blog',
                 element: <Blog></Blog>
+            },
+            {
+                path: '/payment/:id',
+                loader: ({ params }) => fetch(`http://localhost:5000/bookings?id=${params.id}`),
+                element: <Payment></Payment>
             },
             {
                 path: '/signin',
