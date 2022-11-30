@@ -1,11 +1,24 @@
+import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { HiCheckCircle } from "react-icons/hi";
+
 
 const ProductDetails = () => {
     const productInfo = useLoaderData();
     const { location, originalPrice, phone, postedTime, productCondition, productDescription, productImg, productname, purchasedYear, resalePrice, sellerEmail, sellerName, usedFor } = productInfo;
-
-    console.log(productInfo);
+    // Load all users from database
+    const { data: users = [] } = useQuery({
+        queryKey: ['users'],
+        queryFn: async () => {
+            const res = await fetch('http://localhost:5000/users');
+            const data = await res.json();
+            return data;
+        }
+    })
+    // Findout Verified Seller
+    const thisSeller = users.find(user => user.email === sellerEmail);
+    const isVerified = thisSeller?.userVerified === true;
     return (
         <div className='max-w-[1200px] mx-auto mt-10 mb-40'>
             <h3 className='text-xl md:text-2xl lg:text-4xl font-semibold mb-3'><strong>{productname}</strong></h3>
@@ -16,6 +29,7 @@ const ProductDetails = () => {
                 </div>
                 <div className='m-3 md:w-3/5'>
                     <h4 className='text-xl md:text-2xl font-bold mb-3'>Details</h4>
+                    <div>{isVerified ? <div className='flex items-center'><HiCheckCircle className='text-blue-500 ml-2' /><button className='badge ml-1'>Book Now</button></div> : ''}</div>
                     <table>
                         <tbody>
                             <tr>

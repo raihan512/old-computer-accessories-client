@@ -45,7 +45,6 @@ const Buyers = () => {
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Role</th>
-                                    <th>Verify</th>
                                     <th>Delete</th>
                                 </tr>
                             </thead>
@@ -57,7 +56,6 @@ const Buyers = () => {
                                             <td className='uppercase'>{buyer.name}</td>
                                             <td>{buyer.email}</td>
                                             <td className='uppercase'>{buyer.category}</td>
-                                            <td></td>
                                             <td><button className='py-2 px-5 rounded-md hover:bg-red-600 border-0' onClick={() => handleDeletebuyer(buyer._id)}>Delete</button></td>
                                         </tr>)
                                 }

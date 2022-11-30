@@ -2,11 +2,12 @@ import { useQuery } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
 
 const Seller = () => {
+    const url = 'http://localhost:5000/users';
     // Load all users from backend
     const { data: allUsers = [], refetch } = useQuery({
         queryKey: ['allUsers'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/users`);
+            const res = await fetch(`${url}`);
             const data = await res.json();
             return data;
         }
@@ -16,8 +17,7 @@ const Seller = () => {
 
     // Delete seller function
     const handleDeleteSeller = id => {
-        console.log(id);
-        fetch(`http://localhost:5000/users/${id}`, {
+        fetch(`${url}/${id}`, {
             method: "DELETE",
             headers: {
                 'Content-Type': 'application/json'
@@ -33,6 +33,23 @@ const Seller = () => {
                 }
             })
     }
+    // Verify Seller Function
+    const handleVerifySeller = id => {
+        fetch(`${url}/${id}`, {
+            method: "PATCH",
+            headers: {
+                'content-type': 'application/json'
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    toast.success('User Verified')
+                    refetch();
+                }
+            })
+            .catch(error => console.error(error))
+    }
     return (
         <>
             {
@@ -43,8 +60,8 @@ const Seller = () => {
                                 <tr>
                                     <th></th>
                                     <th>Name</th>
-                                    <th>Role</th>
                                     <th>Email</th>
+                                    <th>Role</th>
                                     <th>Verify</th>
                                     <th>Delete</th>
                                 </tr>
@@ -58,7 +75,7 @@ const Seller = () => {
                                             <td>{buyer.name}</td>
                                             <td>{buyer.email}</td>
                                             <td>{buyer.category}</td>
-                                            <td></td>
+                                            <td><button className='py-2 px-5 rounded-md hover:bg-green-600 border-0' onClick={() => handleVerifySeller(buyer._id)}>{buyer.userVerified ? 'Verfied' : 'Verify'}</button></td>
                                             <td><button className='py-2 px-5 rounded-md hover:bg-red-600 border-0' onClick={() => handleDeleteSeller(buyer._id)}>Delete</button></td>
                                         </tr>)
                                 }

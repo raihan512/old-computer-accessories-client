@@ -25,14 +25,6 @@
     },
     {
         "_id": {
-            "$oid": "6384f736be913683ec681cb3"
-        },
-        "name": "Admin",
-        "email": "admin@mail.com",
-        "category": "admin"
-    },
-    {
-        "_id": {
             "$oid": "6384f0f9be913683ec681ca0"
         },
         "name": "Akash Rahman",
@@ -62,5 +54,13 @@
         "name": "Raihan Gazi",
         "email": "raihangazi1024@gmail.com",
         "category": "buyer"
+    },
+    {
+        "_id": {
+            "$oid": "6385000c4a7c017a46714372"
+        },
+        "name": "Mursalin Piash",
+        "email": "mursalin@gmail.com",
+        "category": "seller"
     }
 ]

@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import BookingModal from './CategorySingleItem/BookingModal/BookingModal';
 import CategorySingleItem from './CategorySingleItem/CategorySingleItem';
 
 const Category = () => {
-    const categoryItems = useLoaderData()
+    const categoryItems = useLoaderData();
+    const [booking, setBooking] = useState(null);
 
     return (
         <div className='min-h-screen'>
@@ -19,9 +21,17 @@ const Category = () => {
                     categoryItems.map(categoryItem => <CategorySingleItem
                         key={categoryItem._id}
                         categoryItem={categoryItem}
+                        setBooking={setBooking}
                     ></CategorySingleItem>)
                 }
             </div>
+            {
+                booking &&
+                <BookingModal
+                    booking={booking}
+                    setBooking={setBooking}
+                ></BookingModal>
+            }
         </div>
     );
 };
