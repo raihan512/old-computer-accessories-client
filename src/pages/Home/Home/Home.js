@@ -8,9 +8,13 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <Advertise></Advertise>
-            <Categories></Categories>
-            <RecentlyAddedProducts></RecentlyAddedProducts>
+            <div className='max-w-[1200px] mx-auto'>
+                <div className='mx-5'>
+                    <Advertise></Advertise>
+                    <Categories></Categories>
+                    <RecentlyAddedProducts></RecentlyAddedProducts>
+                </div>
+            </div>
         </div>
     );
 };

@@ -5,11 +5,15 @@ import { Link } from 'react-router-dom';
 const RecentlyAddedItem = ({ product }) => {
     const { resalePrice, productname, productImg, _id } = product;
     return (
-        <div className='border rounded-md p-5 mx-5'>
-            <img src={productImg} alt={productname} className="h-40 mx-auto" />
-            <p className='text-lg font-semibold'><strong>{productname}</strong></p>
-            <p className='font-bold mb-2'><strong>Price: {resalePrice}</strong></p>
-            <Link to={`/productdetails/${_id}`}><button className='btn bg-accent border-0 text-lg font-semibold w-40'>See Details</button></Link>
+        <div className="border p-3 rounded-md mx-5">
+            <figure><img src={productImg} alt={productname} className='h-20 md:h-40' /></figure>
+            <div className="">
+                <h2 className="text-lg font-bold truncate">{productname}...</h2>
+                <h4 className='text-md my-2'><strong>{resalePrice} Tk</strong></h4>
+                <button className="bg-accent py-2 w-full text-white font-semibold btn-primary">
+                    <Link to={`/productdetails/${_id}`}>See Details</Link>
+                </button>
+            </div>
         </div>
     );
 };

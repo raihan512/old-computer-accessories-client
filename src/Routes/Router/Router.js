@@ -14,6 +14,7 @@ import ProductDetails from "../../pages/ProductDetails/ProductDetails";
 import AddProducts from "../../pages/SellerPages/AddProducts/AddProducts";
 import MyProducts from "../../pages/SellerPages/MyProducts/MyProducts";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import AdminRoute from "../AdminRoute/AdminRoute";
 
 export const Router = createBrowserRouter([
     {
@@ -62,11 +63,11 @@ export const Router = createBrowserRouter([
         children: [
             {
                 path: '/dashboard/:usercategory/allsellers',
-                element: <Allseller></Allseller>
+                element: <AdminRoute><Allseller></Allseller></AdminRoute>
             },
             {
                 path: '/dashboard/:usercategory/allbuyers',
-                element: <AllBuyers></AllBuyers>
+                element: <AdminRoute><AllBuyers></AllBuyers></AdminRoute>
             },
             {
                 path: '/dashboard/:usercategory/reporteditems',

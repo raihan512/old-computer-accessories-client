@@ -24,19 +24,19 @@ const ProductCard = ({ product, booking, setBooking }) => {
             <div className="badge absolute top-0 right-0">{postedTime}</div>
             <img className='h-40 mx-auto mt-5' src={productImg} alt="" />
             <div>
-                <h4 className='text-lg font-bold my-3'>{productname}</h4>
-                <h4 className='text-lg font-bold mb-1 flex items-center'>Seller: {sellerName}
+                <h4 className='text-sm md:text-md font-bold my-3'>{productname}</h4>
+                <h4 className='text-sm md:text-md font-bold mb-1 flex items-center'>Seller: {sellerName}
                     <span>{isVerified ? <div className='flex items-center'><HiCheckCircle className='text-blue-500 ml-2' />
                         <label htmlFor="book-now-modal" className="badge cursor-pointer ml-1" onClick={() => setBooking(product)}>Book Now</label>
                     </div> : ''}</span>
                 </h4>
-                <h4 className='text:lg font-semibold mb-1'>Location: {location}</h4>
-                <h4 className='text:lg font-semibold mb-1'>Used: {usedFor}</h4>
-                <p className='text-lg'>Buying Price: <span className='text-accent'>{originalPrice}Tk</span></p>
-                <p className='text-lg'>Selling Price: <span className='text-accent'>{resalePrice}Tk</span></p>
-                <p className='text-lg text-black'>
+                <h4 className='text-md font-semibold mb-1'>Location: {location}</h4>
+                <h4 className='text-md font-semibold mb-1'>Used: {usedFor}</h4>
+                <p className='text-md'>Buying Price: <span className='text-accent'>{originalPrice}Tk</span></p>
+                <p className='text-md'>Selling Price: <span className='text-accent'>{resalePrice}Tk</span></p>
+                <p className='text-sm text-black my-2'>
                     {productDescription.length > 50 ?
-                        <>{productDescription.slice(0, 50)}...</> :
+                        <><strong>Desc:</strong> {productDescription.slice(0, 50)}...</> :
                         productDescription}</p>
                 <Link to={`/productdetails/${_id}`}><button className='rounded-sm bg-accent border-0 text-lg text-white font-semibold  w-full'>See Details</button></Link>
             </div>

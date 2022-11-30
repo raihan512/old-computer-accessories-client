@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Title from '../../../Components/Title/Title';
 import CategoryItem from './CategoryItem/CategoryItem';
 
 const Categories = () => {
@@ -14,9 +13,9 @@ const Categories = () => {
     }, [])
 
     return (
-        <div className='my-20 max-w-[1200px] mx-auto'>
-            <Title>Categories</Title>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
+        <div>
+            <h2 className='text-center text-xl md:text-4xl text-black uppercase font-bold my-5 md:my-10'>Advertised Item</h2>
+            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5'>
                 {
                     categories.map(category => <CategoryItem
                         key={category._id}

@@ -18,8 +18,8 @@ const Advertise = () => {
         return '';
     }
     return (
-        <div className='max-w-[1200px] mx-auto my-20'>
-            <h2 className='text-center text-5xl text-black uppercase font-bold my-10'>Advertised Item</h2>
+        <div>
+            <h2 className='text-center text-xl md:text-4xl text-black uppercase font-bold my-5 md:my-10'>Advertised Item</h2>
             <div className='flex flex-wrap justify-evenly'>
 
                 {

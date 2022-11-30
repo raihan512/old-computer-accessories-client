@@ -6,8 +6,6 @@ import { AuthProvider } from '../../../Contexts/Authprovider/AuthContext';
 const Navbar = () => {
     const { user, signout } = useContext(AuthProvider);
     const navigate = useNavigate();
-
-
     const email = user?.email;
     const { data: userCategory = [], refetch } = useQuery({
         queryKey: ['userCategory', email],
@@ -70,11 +68,11 @@ const Navbar = () => {
                     user ?
                         // if user available then show SignOut button
                         <>
-                            <button className='btn bg-error border-0 text-lg font-semibold' onClick={handleLogut}>SignOut</button>
+                            <button className='bg-error border-0 text-lmdfont-semibold py-1 px-5 rounded-sm text-white' onClick={handleLogut}>SignOut</button>
                         </> :
                         // if user is not available then show SignIn button
                         <>
-                            <button className='btn bg-accent border-0 text-lg font-semibold'><Link to='/signin'>SignIn</Link></button>
+                            <button className='bg-accent border-0 text-md font-semibol py-1 px-5 rounded-sm text-white'><Link to='/signin'>SignIn</Link></button>
                         </>
                 }
 

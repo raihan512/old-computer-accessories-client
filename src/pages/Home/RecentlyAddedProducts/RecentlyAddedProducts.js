@@ -1,28 +1,31 @@
-import { useQuery } from '@tanstack/react-query';
 import React from 'react';
-import RecentlyAddedItem from './RecentlyAddedItem/RecentlyAddedItem';
-
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import { useQuery } from '@tanstack/react-query';
+import RecentlyAddedItem from './RecentlyAddedItem/RecentlyAddedItem';
 
 const RecentlyAddedProducts = () => {
     const responsive = {
         superLargeDesktop: {
-            // the naming can be any, depends on you.
             breakpoint: { max: 4000, min: 3000 },
             items: 5
         },
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
-            items: 3
+            items: 3,
+            partialVisibilityGutter: 40
         },
         tablet: {
             breakpoint: { max: 1024, min: 464 },
-            items: 2
+            items: 2,
+            partialVisibilityGutter: 20
+
         },
         mobile: {
             breakpoint: { max: 464, min: 0 },
-            items: 1
+            items: 1,
+            partialVisibilityGutter: 20
+
         }
     };
 
@@ -36,13 +39,14 @@ const RecentlyAddedProducts = () => {
     })
 
     return (
-        <div className='my-10 max-w-[1200px] mx-auto'>
-            <h3 className='text-4xl font-bold text-center mb-10'>Recently Added Products</h3>
+        <div>
+            <h2 className='text-center text-xl md:text-4xl text-black uppercase font-bold my-5 md:my-10'>Recently Added Products</h2>
             <div className='mx-5'>
                 <Carousel
                     responsive={responsive}
                     additionalTransfrom={0}
                     arrows
+                    autoPlay={true}
                     autoPlaySpeed={3000}
                     centerMode={false}
                     className=""
@@ -77,7 +81,7 @@ const RecentlyAddedProducts = () => {
                             ></RecentlyAddedItem>
                         )
                     }
-                </Carousel>;
+                </Carousel>
             </div>
         </div>
     );

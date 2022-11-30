@@ -59,14 +59,14 @@ const SignUp = () => {
     return (
         <div className='max-w-[500px] bg-base-200 shadow-lg mx-auto my-20 p-10 border rounded-md'>
             {/* Title */}
-            <h2 className='text-4xl font-bold uppercase text-center'>SignUp</h2>
+            <h2 className='text-2xl  md:text-4xl font-semibold uppercase text-center'>SignUp</h2>
             {/* Form Start */}
             <form
                 onSubmit={handleSubmit(handleSignUp)}>
                 {/* Input Field */}
                 <div className="form-control w-full">
                     <label className="label">
-                        <span className="label-text text-xl font-semibold uppercase">Name</span>
+                        <span className="label-text text-lg font-semibold capitalize">Name</span>
                     </label>
                     <input type="text" {...register("name", { required: true })} className="input input-bordered w-full" />
                     {errors.name && errors.name.type === "required" && <span className='text-red-600'>Name is required</span>}
@@ -74,7 +74,7 @@ const SignUp = () => {
                 {/* Input Field */}
                 <div className="form-control w-full">
                     <label className="label">
-                        <span className="label-text text-xl font-semibold uppercase">Email</span>
+                        <span className="label-text text-lg font-semibold capitalize">Email</span>
                     </label>
                     <input type="email" {...register("email", { required: true })} className="input input-bordered w-full" />
                     {errors.email && errors.email.type === "required" && <span className='text-red-600'>Email is required</span>}
@@ -82,7 +82,7 @@ const SignUp = () => {
                 {/* Input Field */}
                 <div className="form-control w-full">
                     <label className="label">
-                        <span className="label-text text-xl font-semibold uppercase">You are Buyer/Seller?</span>
+                        <span className="label-text text-lg font-semibold capitalize">You are Buyer/Seller?</span>
                     </label>
                     <select {...register("category", { required: true })}
                         className="select select-bordered text-lg">
@@ -93,7 +93,7 @@ const SignUp = () => {
                 {/* Input Field */}
                 <div className="form-control w-full">
                     <label className="label">
-                        <span className="label-text text-xl font-semibold uppercase">Password</span>
+                        <span className="label-text text-lg font-semibold capitalize">Password</span>
                     </label>
                     <input type="password" {...register('password', {
                         required: 'Password is required',
@@ -105,7 +105,7 @@ const SignUp = () => {
                     </label>
                 </div>
                 {/* Submit Button */}
-                <input className='btn mt-5' type="submit" />
+                <input className='py-2 w-full bg-accent rounded-md text-white cursor-pointer font-semibold mt-5' type="submit" value='SignUp' />
                 <div className="divider">OR</div>
                 {/* Google Provider */}
                 <button

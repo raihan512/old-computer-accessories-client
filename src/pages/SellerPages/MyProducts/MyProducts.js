@@ -33,7 +33,6 @@ const MyProducts = () => {
     }
 
     const handleAdvertiseProduct = id => {
-        // console.log(id);
         fetch(`http://localhost:5000/products/${id}`, {
             method: "PATCH",
             headers: {
@@ -51,17 +50,19 @@ const MyProducts = () => {
             .catch(error => console.error(error))
     }
     return (
-        <div className='max-w-[1200px] min-h-screen my-10 mx-auto'>
-            <h3 className='text-3xl font-bold text-center my-10'>{user.displayName} you added {userProducts.length} items</h3>
-            <div className='grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
-                {
-                    userProducts.map(product => <MySingleProduct
-                        key={product._id}
-                        product={product}
-                        handleDeleteProduct={handleDeleteProduct}
-                        handleAdvertiseProduct={handleAdvertiseProduct}
-                    ></MySingleProduct>)
-                }
+        <div className='max-w-[1200px] min-h-screen my-5 md:my-10 mx-auto'>
+            <div className='mx-5'>
+                <h2 className='text-center text-xl md:text-4xl text-black uppercase font-bold my-5 md:my-10'>My Products</h2>
+                <div className='grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+                    {
+                        userProducts.map(product => <MySingleProduct
+                            key={product._id}
+                            product={product}
+                            handleDeleteProduct={handleDeleteProduct}
+                            handleAdvertiseProduct={handleAdvertiseProduct}
+                        ></MySingleProduct>)
+                    }
+                </div>
             </div>
         </div>
     );
