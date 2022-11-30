@@ -65,8 +65,8 @@ const AddProducts = () => {
     return (
         <div className='mx-5'>
             <div className='max-w-[1000px] border border-accent rounded-md my-20 mx-auto'>
-                <h3 className='text-3xl font-bold uppercase text-center my-10 text-accent'>Add your products</h3>
-                <form className='px-20 pb-10 grid grid-cols-1 md:grid-cols-2 gap-5' onSubmit={handleSubmit(handleAddProducts)}>
+                <h3 className='text-xl md:text-3xl font-bold uppercase text-center my-10 text-accent'>Add your products</h3>
+                <form className='px-5 md:px-20 pb-10 grid grid-cols-1 md:grid-cols-2 gap-5' onSubmit={handleSubmit(handleAddProducts)}>
                     {/* Product name */}
                     <div>
                         <input type="text" {...register("productname", { required: true })} placeholder="Add Your Product Name" className="input input-bordered input-accent w-full text-lg font-semibold mt-3" />
