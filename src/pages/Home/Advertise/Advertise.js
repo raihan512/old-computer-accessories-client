@@ -1,8 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
-import AdvertiseItem from './AdvertiseItem/AdvertiseItem';
+import React, { useState } from 'react';
+import BookingModal from '../../Category/BookingModal/BookingModal';
+import ProductCard from '../../shared/ProductCard/ProductCard';
 
 const Advertise = () => {
+    const [booking, setBooking] = useState(null);
 
     const { data: advertisedProducts = [] } = useQuery({
         queryKey: ['advertisedProducts'],
@@ -18,12 +20,22 @@ const Advertise = () => {
     return (
         <div className='max-w-[1200px] mx-auto my-20'>
             <h2 className='text-center text-5xl text-black uppercase font-bold my-10'>Advertised Item</h2>
-            <div className='md:flex flex-wrap'>
+            <div className='flex flex-wrap justify-evenly'>
+
                 {
-                    advertisedProducts.map(advertisedProduct => <AdvertiseItem
-                        key={advertisedProduct._id}
-                        advertisedProduct={advertisedProduct}
-                    ></AdvertiseItem>)
+                    advertisedProducts.map(product => <ProductCard
+                        key={product._id}
+                        product={product}
+                        setBooking={setBooking}
+                    ></ProductCard>)
+                }
+
+                {
+                    booking &&
+                    <BookingModal
+                        booking={booking}
+                        setBooking={setBooking}
+                    ></BookingModal>
                 }
             </div>
         </div>

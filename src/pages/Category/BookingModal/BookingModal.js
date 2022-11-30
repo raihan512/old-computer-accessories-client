@@ -1,13 +1,15 @@
 import React, { useContext } from 'react';
-import { AuthProvider } from '../../../../Contexts/Authprovider/AuthContext';
+import toast from 'react-hot-toast';
+import { AuthProvider } from '../../../Contexts/Authprovider/AuthContext';
 
 const BookingModal = ({ booking, setBooking }) => {
     const { user } = useContext(AuthProvider);
 
+    // Handle Booking
     const handleBooking = (event) => {
         event.preventDefault();
+        // Get Data from booking modal form
         const form = event.target;
-
         const productName = form.productname.value;
         const buyerName = form.buyerName.value;
         const buyerEmail = form.buyerEmail.value;
@@ -15,7 +17,15 @@ const BookingModal = ({ booking, setBooking }) => {
         const buyerPhone = form.buyerPhone.value;
         const meetingLocation = form.meetingLocation.value;
         const bookingDetails = { productName, buyerName, buyerEmail, resalePrice, buyerPhone, meetingLocation }
-        console.log(bookingDetails);
+        // Send booking form data to backend
+        fetch('http://localhost:5000/bookings', { method: "POST", headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(bookingDetails) })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    toast.success('Porduct Booked')
+                }
+            })
+            .catch(error => console.error(error))
         setBooking(null);
     }
     return (
