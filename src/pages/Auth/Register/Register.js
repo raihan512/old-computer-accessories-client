@@ -4,7 +4,7 @@ import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { AuthProvider } from '../../../Contexts/Authprovider/AuthContext';
 
-const SignUp = () => {
+const Register = () => {
     const { signUp, updateUser, googleLogin } = useContext(AuthProvider);
     const { register, handleSubmit, formState: { errors } } = useForm();
     const navigate = useNavigate();
@@ -59,7 +59,7 @@ const SignUp = () => {
     return (
         <div className='max-w-[500px] bg-base-200 shadow-lg mx-auto my-20 p-10 border rounded-md'>
             {/* Title */}
-            <h2 className='text-2xl  md:text-4xl font-semibold uppercase text-center'>SignUp</h2>
+            <h2 className='text-2xl  md:text-4xl font-semibold uppercase text-center'>Register</h2>
             {/* Form Start */}
             <form
                 onSubmit={handleSubmit(handleSignUp)}>
@@ -105,7 +105,7 @@ const SignUp = () => {
                     </label>
                 </div>
                 {/* Submit Button */}
-                <input className='py-2 w-full bg-accent rounded-md text-white cursor-pointer font-semibold mt-5' type="submit" value='SignUp' />
+                <input className='py-2 w-full bg-accent rounded-md text-white cursor-pointer font-semibold mt-5' type="submit" value='Register' />
                 <div className="divider">OR</div>
                 {/* Google Provider */}
                 <button
@@ -117,4 +117,4 @@ const SignUp = () => {
     );
 };
 
-export default SignUp;
+export default Register;

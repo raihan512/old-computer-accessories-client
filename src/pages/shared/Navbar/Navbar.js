@@ -1,12 +1,16 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { CgMenuGridR } from 'react-icons/cg'
 import { AuthProvider } from '../../../Contexts/Authprovider/AuthContext';
+import { useState } from 'react';
 
 const Navbar = () => {
-    const { user, signout } = useContext(AuthProvider);
-    const navigate = useNavigate();
+    const { user } = useContext(AuthProvider);
+    const [dropMenu, setDropMenu] = useState(false)
     const email = user?.email;
+
+    // Load user category by email
     const { data: userCategory = [], refetch } = useQuery({
         queryKey: ['userCategory', email],
         queryFn: async () => {
@@ -16,75 +20,49 @@ const Navbar = () => {
             return data;
         }
     })
-
-    const menuItems = <>
-        <li className='text-black font-semibold uppercase text-lg'><Link to='/'>Home</Link></li>
-        <>
-            {
-                user && <li className='text-black font-semibold uppercase text-lg'><Link to={`/dashboard/${userCategory?.category}`}>Dashboard</Link></li>
-            }
-        </>
-        <>
-            {userCategory.category === 'buyer' && <>
-                <li className='text-black font-semibold uppercase text-lg'>
-                    <Link to='/mybookings'>My Bookings</Link></li></>}
-        </>
-        <>
-            {
-                userCategory.category === 'seller' && <>
-                    <li className='text-black font-semibold uppercase text-lg'>
-                        <Link to='/addproducts'>Add Product</Link></li><li className='text-black font-semibold uppercase text-lg'><Link to='/myproducts'>My Product</Link>
-                    </li></>
-            }
-        </>
-        <li className='text-black font-semibold uppercase text-lg'><Link to='/blog'>Blog</Link></li>
-
-    </>
-
-    const handleLogut = () => {
-        signout()
-            .then(res => {
-                navigate('/signin')
-
-            })
-            .catch(error => console.error(error))
-    }
+    // Menu items container
+    const menuItems = <div className='text-black font-medium uppercase text-base'>
+        <Link className='hover:text-amber-600 md:ml-5 py-1 px-12 md:p-0 hover:bg-slate-50 md:hover:bg-transparent' to='/'>Home</Link>
+        {
+            user &&
+            <Link className='hover:text-amber-600 md:ml-5 py-1 px-12 md:p-0 hover:bg-slate-50 md:hover:bg-transparent' to={`/dashboard/${userCategory?.category}`}>Dashboard</Link>
+        }
+        {/* Buyer menu items*/}
+        {userCategory.category === 'buyer' &&
+            <Link className='hover:text-amber-600 md:ml-5 py-1 px-12 md:p-0 hover:bg-slate-50 md:hover:bg-transparent' to='/mybookings'>My Bookings</Link>
+        }
+        {/* Seller menu items */}
+        {userCategory.category === 'seller' &&
+            <>
+                <Link className='hover:text-amber-600 md:ml-5 py-1 px-12 md:p-0 hover:bg-slate-50 md:hover:bg-transparent' to='/mybookings'>My Bookings</Link>
+                <Link className='hover:text-amber-600 md:ml-5 py-1 px-12 md:p-0 hover:bg-slate-50 md:hover:bg-transparent' to='/myproducts'>My Product</Link>
+            </>
+        }
+        <Link className='hover:text-amber-600 md:ml-5 py-1 px-12 md:p-0 hover:bg-slate-50 md:hover:bg-transparent' to='/blog'>Blog</Link>
+    </div>
 
     return (
-        <div className="navbar bg-base-100 sticky top-0 w-100 z-10 shadow-lg">
-            <div className="navbar-start">
-                <div className="dropdown">
-                    <label tabIndex={0} className="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                    </label>
-                    <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                        {menuItems}
-                    </ul>
+        <nav className='bg-slate-200 py-3 sticky top-0 w-100 z-10 shadow-md'>
+            <div className='mx-5 flex justify-between items-center'>
+                {/* Logo */}
+                <div>
+                    <p className='text-xl font-bold'><Link to='/'>PCPARTS</Link></p>
                 </div>
-                <Link to='/' className="btn btn-ghost uppercase text-xl font-bold"><strong>PcParts</strong></Link>
-            </div>
-            <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal p-0">
+                {/* Desktop Menu */}
+                <div className='hidden md:block items-center'>
                     {menuItems}
-                </ul>
+                </div>
+                {/* Mobile menu */}
+                <div className='md:hidden relative'>
+                    <button onClick={() => setDropMenu(!dropMenu)}>
+                        <CgMenuGridR className='text-xl cursor-pointer' />
+                    </button>
+                    {
+                        dropMenu && <div className='absolute top-5 right-0 bg-slate-400 rounded-md overflow-hidden'>{menuItems}</div>
+                    }
+                </div>
             </div>
-            <div className="navbar-end">
-                {
-                    user ?
-                        // if user available then show SignOut button
-                        <>
-                            <button className='bg-error border-0 text-lmdfont-semibold py-1 px-5 rounded-sm text-white' onClick={handleLogut}>SignOut</button>
-                        </> :
-                        // if user is not available then show SignIn button
-                        <>
-                            <button className='bg-accent border-0 text-md font-semibol py-1 px-5 rounded-sm text-white'><Link to='/signin'>SignIn</Link></button>
-                        </>
-                }
-
-            </div>
-        </div>
-
-
+        </nav>
     );
 };
 

@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthProvider } from '../../../Contexts/Authprovider/AuthContext';
 
-const SignIn = () => {
+const Login = () => {
     const { signIn } = useContext(AuthProvider);
     const { register, handleSubmit } = useForm();
     const [loginError, setLoginError] = useState('');
@@ -48,12 +48,12 @@ const SignIn = () => {
                     <p className='text-sm text-red-500'>{loginError}</p>
                 </div>
                 <div>
-                    <p>New user? <Link to='/signup' className='font-semibold text-accent'>SignUp</Link></p>
+                    <p>New user? <Link to='/register' className='font-semibold text-accent'>Register</Link></p>
                 </div>
-                <input className='py-2 w-full bg-accent rounded-md text-white cursor-pointer font-semibold mt-5' type="submit" value='SignIn' />
+                <input className='py-2 w-full bg-accent rounded-md text-white cursor-pointer font-semibold mt-5' type="submit" value='Login' />
             </form>
         </div>
     );
 };
 
-export default SignIn;
+export default Login;

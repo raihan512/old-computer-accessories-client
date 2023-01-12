@@ -1,7 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../Layout/Main/Main";
-import SignIn from "../../pages/Auth/SignIn/SignIn";
-import SignUp from "../../pages/Auth/SignUp/SignUp";
 import Blog from "../../pages/Blog/Blog";
 import Category from "../../pages/Category/Category";
 import AllBuyers from "../../pages/Dashboard/Buyers/Buyers";
@@ -17,6 +15,8 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import AdminRoute from "../AdminRoute/AdminRoute";
 import Payment from "../../pages/Payment/Payment";
 import MyBookings from "../../pages/MyBookings/MyBookings";
+import Login from "../../pages/Auth/Login/Login";
+import Register from "../../pages/Auth/Register/Register";
 
 export const Router = createBrowserRouter([
     {
@@ -59,12 +59,12 @@ export const Router = createBrowserRouter([
                 element: <Payment></Payment>
             },
             {
-                path: '/signin',
-                element: <SignIn></SignIn>
+                path: '/login',
+                element: <Login></Login>
             },
             {
-                path: '/signup',
-                element: <SignUp></SignUp>
+                path: '/register',
+                element: <Register></Register>
             }
         ]
     },
