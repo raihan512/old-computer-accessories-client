@@ -9,7 +9,6 @@ import { AuthProvider } from '../../../Contexts/Authprovider/AuthContext';
 
 const ProductCard = ({ product, booking, setBooking }) => {
     const { user } = useContext(AuthProvider);
-    console.log(user);
     const { _id, productImg, productname, resalePrice, location, sellerEmail } = product;
 
     // Load all users from database

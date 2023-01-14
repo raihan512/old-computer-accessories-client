@@ -3,8 +3,11 @@ import { FaMoneyBillAlt, FaLuggageCart } from 'react-icons/fa'
 import { AiFillPlusCircle } from 'react-icons/ai'
 import { FiArrowRightCircle } from 'react-icons/fi'
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthProvider } from '../../../Contexts/Authprovider/AuthContext';
 
 const SellerBuyer = () => {
+    const { user } = useContext(AuthProvider);
     return (
         <section className='max-w-[1200px] mx-auto'>
             <div>
@@ -20,7 +23,7 @@ const SellerBuyer = () => {
                             Do you have something to sell?
                             Post your first ad and earn money!
                         </p>
-                        <Link className='mt-3 flex items-center text-lg bg-yellow-400 py-2 px-3 md:px-5 rounded-full text-black' to='/addproducts'><AiFillPlusCircle className='text-xl mr-2' /> Add Product</Link>
+                        <Link className='mt-3 flex items-center text-lg bg-yellow-400 py-2 px-3 md:px-5 rounded-full text-black' to='/addproducts'><AiFillPlusCircle className='text-xl mr-2' />{user?.uid ? 'Add Product' : <Link to='/login'>Add Product</Link>}</Link>
                     </div>
                 </div>
                 {/* Know More */}
