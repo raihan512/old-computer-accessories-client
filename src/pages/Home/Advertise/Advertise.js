@@ -19,9 +19,8 @@ const Advertise = () => {
     }
     return (
         <div>
-            <h2 className='text-center text-xl md:text-4xl text-black uppercase font-bold my-5 md:my-10'>Advertised Item</h2>
-            <div className='flex flex-wrap justify-evenly'>
-
+            <h2 className='text-center text-xl md:text-2xl text-black uppercase font-bold my-5 md:my-10'>Advertise Products</h2>
+            <div className='grid grid-cols-5 justify-items-center mb-5'>
                 {
                     advertisedProducts.map(product => <ProductCard
                         key={product._id}
@@ -29,7 +28,6 @@ const Advertise = () => {
                         setBooking={setBooking}
                     ></ProductCard>)
                 }
-
                 {
                     booking &&
                     <BookingModal

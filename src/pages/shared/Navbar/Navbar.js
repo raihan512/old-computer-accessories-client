@@ -21,24 +21,24 @@ const Navbar = () => {
         }
     })
     // Menu items container
-    const menuItems = <div className='text-black font-medium uppercase text-base'>
-        <Link className='hover:text-amber-600 md:ml-5 py-1 px-12 md:p-0 hover:bg-slate-50 md:hover:bg-transparent' to='/'>Home</Link>
+    const menuItems = <div className='text-black font-medium uppercase text-sm md:text-base flex flex-col md:flex-row'>
+        <Link className='hover:text-amber-600 md:ml-5 py-1 px-8 md:p-0 hover:bg-slate-50 md:hover:bg-transparent' onClick={() => setDropMenu(false)} to='/'>Home</Link>
         {
             user &&
-            <Link className='hover:text-amber-600 md:ml-5 py-1 px-12 md:p-0 hover:bg-slate-50 md:hover:bg-transparent' to={`/dashboard/${userCategory?.category}`}>Dashboard</Link>
+            <Link className='hover:text-amber-600 md:ml-5 py-1 px-8 md:p-0 hover:bg-slate-50 md:hover:bg-transparent' to={`/dashboard/${userCategory?.category}`}>Dashboard</Link>
         }
         {/* Buyer menu items*/}
         {userCategory.category === 'buyer' &&
-            <Link className='hover:text-amber-600 md:ml-5 py-1 px-12 md:p-0 hover:bg-slate-50 md:hover:bg-transparent' to='/mybookings'>My Bookings</Link>
+            <Link className='hover:text-amber-600 md:ml-5 py-1 px-8 md:p-0 hover:bg-slate-50 md:hover:bg-transparent' onClick={() => setDropMenu(false)} to='/mybookings'>My Bookings</Link>
         }
         {/* Seller menu items */}
         {userCategory.category === 'seller' &&
             <>
-                <Link className='hover:text-amber-600 md:ml-5 py-1 px-12 md:p-0 hover:bg-slate-50 md:hover:bg-transparent' to='/mybookings'>My Bookings</Link>
-                <Link className='hover:text-amber-600 md:ml-5 py-1 px-12 md:p-0 hover:bg-slate-50 md:hover:bg-transparent' to='/myproducts'>My Product</Link>
+                <Link className='hover:text-amber-600 md:ml-5 py-1 px-8 md:p-0 hover:bg-slate-50 md:hover:bg-transparent' onClick={() => setDropMenu(false)} to='/mybookings'>Bookings</Link>
+                <Link className='hover:text-amber-600 md:ml-5 py-1 px-8 md:p-0 hover:bg-slate-50 md:hover:bg-transparent' onClick={() => setDropMenu(false)} to='/myproducts'>Product</Link>
             </>
         }
-        <Link className='hover:text-amber-600 md:ml-5 py-1 px-12 md:p-0 hover:bg-slate-50 md:hover:bg-transparent' to='/blog'>Blog</Link>
+        <Link className='hover:text-amber-600 md:ml-5 py-1 px-8 md:p-0 hover:bg-slate-50 md:hover:bg-transparent' onClick={() => setDropMenu(false)} to='/blog'>Blog</Link>
     </div>
 
     return (
@@ -46,7 +46,7 @@ const Navbar = () => {
             <div className='mx-5 flex justify-between items-center'>
                 {/* Logo */}
                 <div>
-                    <p className='text-xl font-bold'><Link to='/'>PCPARTS</Link></p>
+                    <p className='text-xl font-bold'><Link onClick={() => setDropMenu(false)} to='/'>PCPARTS</Link></p>
                 </div>
                 {/* Desktop Menu */}
                 <div className='hidden md:block items-center'>

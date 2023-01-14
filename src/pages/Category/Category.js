@@ -17,7 +17,8 @@ const Category = () => {
                 }
             </h3>
             <div className='max-w-[1200PX] mx-auto px-10'>
-                <div className='flex flex-wrap justify-evenly'>
+                {/* <div className='flex flex-wrap justify-between'> */}
+                <div className='grid grid-cols-5 gap-5 justify-items-center mb-5'>
                     {
                         products.map(product => <ProductCard
                             key={product._id}

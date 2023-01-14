@@ -1,11 +1,12 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
-import { HiCheckCircle } from "react-icons/hi";
+import { FaMapMarkerAlt } from 'react-icons/fa';
+import { } from './ProductCard.css'
 import { Link } from 'react-router-dom';
 
 
 const ProductCard = ({ product, booking, setBooking }) => {
-    const { _id, productImg, postedTime, productname, sellerName, originalPrice, resalePrice, usedFor, productDescription, location, sellerEmail } = product;
+    const { _id, productImg, postedTime, productname, resalePrice, location, sellerEmail } = product;
 
     // Load all users from database
     const { data: users = [] } = useQuery({
@@ -20,26 +21,34 @@ const ProductCard = ({ product, booking, setBooking }) => {
     const thisSeller = users.find(user => user.email === sellerEmail);
     const isVerified = thisSeller?.userVerified === true;
     return (
-        <div className='w-[350px] border border-accent rounded-md mb-5 p-2 hover:shadow-lg relative'>
-            <div className="badge absolute top-0 right-0">{postedTime}</div>
-            <img className='h-40 mx-auto mt-5' src={productImg} alt="" />
-            <div>
-                <h4 className='text-sm md:text-md font-bold my-3'>{productname}</h4>
-                <h4 className='text-sm md:text-md font-bold mb-1 flex items-center'>Seller: {sellerName}
-                    <span>{isVerified ? <div className='flex items-center'><HiCheckCircle className='text-blue-500 ml-2' />
-                        <label htmlFor="book-now-modal" className="badge cursor-pointer ml-1" onClick={() => setBooking(product)}>Book Now</label>
-                    </div> : ''}</span>
-                </h4>
-                <h4 className='text-md font-semibold mb-1'>Location: {location}</h4>
-                <h4 className='text-md font-semibold mb-1'>Used: {usedFor}</h4>
-                <p className='text-md'>Buying Price: <span className='text-accent'>{originalPrice}Tk</span></p>
-                <p className='text-md'>Selling Price: <span className='text-accent'>{resalePrice}Tk</span></p>
-                <p className='text-sm text-black my-2'>
-                    {productDescription.length > 50 ?
-                        <><strong>Desc:</strong> {productDescription.slice(0, 50)}...</> :
-                        productDescription}</p>
-                <Link to={`/productdetails/${_id}`}><button className='rounded-sm bg-accent border-0 text-lg text-white font-semibold  w-full'>See Details</button></Link>
+        <div className='product-card w-[220px] border box-border relative rounded-md shadow-xl overflow-hidden'>
+            {/* Product image */}
+            <div className='bg-slate-50 mb-1'>
+                <Link to={`/productdetails/${_id}`}><img src={productImg} className="h-40 p-5 mx-auto transition-all hover:rotate-12" alt="" /></Link>
             </div>
+            {/* Product content */}
+            <div className='p-2 pt-0'>
+                <p className='flex items-center text-xs'><FaMapMarkerAlt className='mr-0.5' />{location}</p>
+                <h4 className='text-base font-bold truncate text-ellipsis my-1'>{productname}</h4>
+                <p className='text-sm'><strong>Price: ${resalePrice}</strong></p>
+            </div>
+            {/* Product Buttons */}
+            <div className='flex justify-between items-center'>
+                <button className='w-6/12 py-1 text-white font-semibold  bg-accent'><Link to={`/productdetails/${_id}`}>See Details</Link></button>
+                {
+                    isVerified ?
+                        <label className='w-6/12 py-1  text-white font-semibold bg-lime-500 text-center cursor-pointer' htmlFor="book-now-modal" onClick={() => setBooking(product)}>Book Now</label>
+                        :
+                        <label className='w-6/12 py-1  text-white font-semibold bg-red-500 text-center cursor-pointer'>Book Now</label>
+                }
+
+                {/* <span>{isVerified ? </span> */}
+            </div>
+            {/* userveried? */}
+            {isVerified ?
+                <span className='text-xs bg-green-500 py-1 px-3 rounded-sm absolute top-0 right-0 text-white font-serif'>Verified Seller</span> :
+                <span className='text-xs bg-red-500 py-1 px-3 rounded-sm absolute top-0 right-0 text-white font-serif'>Not Verified</span>
+            }
         </div>
     );
 };

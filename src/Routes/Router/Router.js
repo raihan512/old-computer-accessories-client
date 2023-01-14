@@ -17,6 +17,7 @@ import Payment from "../../pages/Payment/Payment";
 import MyBookings from "../../pages/MyBookings/MyBookings";
 import Login from "../../pages/Auth/Login/Login";
 import Register from "../../pages/Auth/Register/Register";
+import AllProducts from "../../pages/AllProducts/AllProducts";
 
 export const Router = createBrowserRouter([
     {
@@ -26,6 +27,11 @@ export const Router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>
+            },
+            {
+                path: '/allproducts',
+                element: <AllProducts></AllProducts>,
+                loader: () => fetch('https://pcparts-server.vercel.app/products')
             },
             {
                 path: '/category/:id',

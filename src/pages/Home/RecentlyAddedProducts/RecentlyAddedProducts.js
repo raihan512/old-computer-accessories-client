@@ -1,29 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { useQuery } from '@tanstack/react-query';
-import RecentlyAddedItem from './RecentlyAddedItem/RecentlyAddedItem';
+import ProductCard from '../../shared/ProductCard/ProductCard';
+import BookingModal from '../../Category/BookingModal/BookingModal';
 
 const RecentlyAddedProducts = () => {
+    const [booking, setBooking] = useState(null);
+
     const responsive = {
-        superLargeDesktop: {
-            breakpoint: { max: 4000, min: 3000 },
-            items: 5
-        },
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
-            items: 3,
+            items: 4,
             partialVisibilityGutter: 40
         },
         tablet: {
             breakpoint: { max: 1024, min: 464 },
-            items: 2,
+            items: 3,
             partialVisibilityGutter: 20
 
         },
         mobile: {
             breakpoint: { max: 464, min: 0 },
-            items: 1,
+            items: 2,
             partialVisibilityGutter: 20
 
         }
@@ -39,8 +38,8 @@ const RecentlyAddedProducts = () => {
     })
 
     return (
-        <div>
-            <h2 className='text-center text-xl md:text-4xl text-black uppercase font-bold my-5 md:my-10'>Recently Added Products</h2>
+        <section className='mb-5'>
+            <h2 className='text-center text-xl md:text-2xl text-black uppercase font-bold my-5 md:my-10'>Recently Added</h2>
             <div className='mx-5'>
                 <Carousel
                     responsive={responsive}
@@ -75,15 +74,24 @@ const RecentlyAddedProducts = () => {
 
                     {
                         allProducts.map(product =>
-                            <RecentlyAddedItem
+                            <ProductCard
+                                booking={booking}
+                                setBooking={setBooking}
                                 key={product._id}
                                 product={product}
-                            ></RecentlyAddedItem>
+                            ></ProductCard>
                         )
                     }
                 </Carousel>
             </div>
-        </div>
+            {
+                booking &&
+                <BookingModal
+                    booking={booking}
+                    setBooking={setBooking}
+                ></BookingModal>
+            }
+        </section>
     );
 };
 
