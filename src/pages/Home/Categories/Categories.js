@@ -15,7 +15,7 @@ const Categories = () => {
     })
 
     return (
-        <div>
+        <section>
             <div className='flex justify-between items-center'>
                 <h2 className='text-xl md:text-2xl text-black uppercase font-bold my-5 md:my-10'>All Categories</h2>
                 <Link to='/allproducts'>See All</Link>
@@ -28,7 +28,7 @@ const Categories = () => {
                     ></CategoryItem>)
                 }
             </div>
-        </div>
+        </section>
     );
 };
 

@@ -20,7 +20,7 @@ const Advertise = () => {
     return (
         <div>
             <h2 className='text-center text-xl md:text-2xl text-black uppercase font-bold my-5 md:my-10'>Advertise Products</h2>
-            <div className='grid grid-cols-5 justify-items-center mb-5'>
+            <div className='grid sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 xl:grid-cols-5 gap-5 justify-items-center mb-5'>
                 {
                     advertisedProducts.map(product => <ProductCard
                         key={product._id}

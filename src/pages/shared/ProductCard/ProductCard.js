@@ -3,10 +3,14 @@ import React from 'react';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import { } from './ProductCard.css'
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthProvider } from '../../../Contexts/Authprovider/AuthContext';
 
 
 const ProductCard = ({ product, booking, setBooking }) => {
-    const { _id, productImg, postedTime, productname, resalePrice, location, sellerEmail } = product;
+    const { user } = useContext(AuthProvider);
+    console.log(user);
+    const { _id, productImg, productname, resalePrice, location, sellerEmail } = product;
 
     // Load all users from database
     const { data: users = [] } = useQuery({
@@ -36,20 +40,18 @@ const ProductCard = ({ product, booking, setBooking }) => {
             <div className='flex justify-between items-center'>
                 <button className='w-6/12 py-1 text-white font-semibold  bg-accent'><Link to={`/productdetails/${_id}`}>See Details</Link></button>
                 {
-                    isVerified ?
+                    isVerified && user ?
                         <label className='w-6/12 py-1  text-white font-semibold bg-lime-500 text-center cursor-pointer' htmlFor="book-now-modal" onClick={() => setBooking(product)}>Book Now</label>
-                        :
-                        <label className='w-6/12 py-1  text-white font-semibold bg-red-500 text-center cursor-pointer'>Book Now</label>
+                        : <label className='w-6/12 py-1  text-white font-semibold bg-red-500 text-center cursor-pointer'>{user?.uid ? 'Book Now' : <Link to='/login'>Book Now</Link>}</label>
                 }
 
-                {/* <span>{isVerified ? </span> */}
             </div>
-            {/* userveried? */}
-            {isVerified ?
-                <span className='text-xs bg-green-500 py-1 px-3 rounded-sm absolute top-0 right-0 text-white font-serif'>Verified Seller</span> :
-                <span className='text-xs bg-red-500 py-1 px-3 rounded-sm absolute top-0 right-0 text-white font-serif'>Not Verified</span>
+            {
+                isVerified ?
+                    <span className='text-xs bg-green-500 py-1 px-3 rounded-sm absolute top-0 right-0 text-white font-serif'>Verified Seller</span> :
+                    <span className='text-xs bg-red-500 py-1 px-3 rounded-sm absolute top-0 right-0 text-white font-serif'>Not Verified</span>
             }
-        </div>
+        </div >
     );
 };
 

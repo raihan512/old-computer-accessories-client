@@ -10,19 +10,25 @@ const RecentlyAddedProducts = () => {
 
     const responsive = {
         desktop: {
-            breakpoint: { max: 3000, min: 1024 },
+            breakpoint: { max: 3000, min: 1366 },
             items: 4,
             partialVisibilityGutter: 40
         },
         tablet: {
-            breakpoint: { max: 1024, min: 464 },
+            breakpoint: { max: 1366, min: 850 },
             items: 3,
             partialVisibilityGutter: 20
 
         },
         mobile: {
-            breakpoint: { max: 464, min: 0 },
+            breakpoint: { max: 850, min: 580 },
             items: 2,
+            partialVisibilityGutter: 20
+
+        },
+        smallmobile: {
+            breakpoint: { max: 580, min: 0 },
+            items: 1,
             partialVisibilityGutter: 20
 
         }
@@ -38,8 +44,10 @@ const RecentlyAddedProducts = () => {
     })
 
     return (
-        <section className='mb-5'>
-            <h2 className='text-center text-xl md:text-2xl text-black uppercase font-bold my-5 md:my-10'>Recently Added</h2>
+        <section className='max-w-[1200px] mx-auto'>
+            <div>
+                <h2 className='text-center text-xl md:text-2xl text-black uppercase font-bold my-5 md:my-10'>Recently added</h2>
+            </div>
             <div className='mx-5'>
                 <Carousel
                     responsive={responsive}

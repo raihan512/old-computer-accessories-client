@@ -12,7 +12,7 @@ const AllProducts = () => {
                 <h2 className='text-center text-xl md:text-2xl text-black uppercase font-bold my-5 md:my-10'>All Products</h2>
             </div>
             {/* Products container */}
-            <div className='grid grid-cols-5 gap-5 justify-items-center mb-5'>
+            <div className='grid sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 xl:grid-cols-5 gap-5 justify-items-center mb-5'>
                 {
                     allProducts.map(product => <ProductCard
                         key={product._id}

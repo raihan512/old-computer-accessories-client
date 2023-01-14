@@ -53,7 +53,7 @@ const MyProducts = () => {
         <div className='max-w-[1200px] min-h-screen my-5 md:my-10 mx-auto'>
             <div className='mx-5'>
                 <h2 className='text-center text-xl md:text-4xl text-black uppercase font-bold my-5 md:my-10'>My Products</h2>
-                <div className='grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+                <div className='grid sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 xl:grid-cols-5 gap-5 justify-items-center mb-5'>
                     {
                         userProducts.map(product => <MySingleProduct
                             key={product._id}
